@@ -77,19 +77,22 @@ public:
 
 private:
     struct Jugador {
-        vector<Nat> _fichasDelJugador;
+        const vector<Nat> _fichasDelJugador;
         Nat _puntajeDelJugador;
         queue<Palabra> _ocurrenciasDelJugador;
-        Nat_puntajeDelJugador;
-        queue<Palabra> _ocurrenciasDelJugador;
-        Jugador(Variante v, Repositorio r) : RepartirFichas(_fichasDelJugador(v.cantFichas,0), r), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
+        Jugador(Variante v, Repositorio r) : _fichasDelJugador(CrearBolsaFichas(v.fichas(),r)), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
         // por fines practicos es un tupla de 3 elemntos
-        vector<Nat> RepartirFichas(vector<Nat> f, Repositorio r){
-            auto i
-        };
-
+        const vector<Nat> CrearBolsaFichas(const Nat &f, Repositorio &r) {
+            vector<Nat> res(f);
+            for(Nat i = 0; i<f; i++){
+                Letra l  = r.front();
+                r.pop_front();
+                res[ord(l)]++;
+            }
+            return res;
+        }
     };
-    Variante& _variante;
+    const Variante& _variante;
     Repositorio _repositorio;
     Tablero _tablero;
     vector<Jugador> _jugadores;

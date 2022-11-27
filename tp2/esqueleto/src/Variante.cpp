@@ -4,7 +4,7 @@
 Variante::Variante(Nat tamanoTab, Nat cantFichas, const map<Letra, Nat> &puntajes, const set<Palabra> &palabrasLegitimas):
 _tamano(tamanoTab),
 _cantidadDeFichas(cantFichas),
-_valorLetras(mapAVector(&puntajes)),
+_valorLetras(mapAVector(puntajes)),
 _palabrasPermitidas(setADiccTrie(&palabrasLegitimas)){}
 
 Nat Variante::tamanoTablero() const {
@@ -16,26 +16,26 @@ Nat Variante::fichas() const {
 }
 
 Nat Variante::puntajeLetra(Letra l) const {
-    return _valorLetras[ord(letra)];
+    return _valorLetras[ord(l)];
 }
 
 bool Variante::palabraLegitima(const Palabra &palabra) const {
-    return const at(&palabra);
+    return at(palabra*);
 }
 
-bool Variante::palabrasLegitimas(const list<Palabra &> palabras) const {
+bool Variante::palabrasLegitimas(const list<Palabra> &palabras) const {
     bool res = true;
     auto it = _palabrasPermitidas.begin();
-    while(res && it != palabrasPermitidas.end()){
-        Palabra pal = palabrasPermitidas.front();
+    while(res && it != _palabrasPermitidas.end()){
+        Palabra pal = _palabrasPermitidas.front();
         res = palabraLegitima(pal);
         it++;
     }
     return res;
 }
 
-vector<Nat> Variante::mapAVector(map<Letra, Nat> &puntajes) {
-    vector<Nat>(puntajes.size()) res;
+const vector<Nat> Variante::mapAVector(const map<Letra, Nat> &puntajes) {
+    vector<Nat> res(puntajes.size());
     auto it = puntajes.begin();
     while (it != puntajes.end()){
         Letra letra = it->first;
@@ -48,7 +48,7 @@ vector<Nat> Variante::mapAVector(map<Letra, Nat> &puntajes) {
 // Complejidad: O(#Claves(puntajes))
 
 string_map Variante::setADiccTrie(const set<Palabra> &palabrasLegitimas) {
-    string_map() res;
+    string_map res();
 
     auto it = palabrasLegitimas.begin();
     while (it != palabrasLegitimas.end()){

@@ -11,12 +11,12 @@ public:
     /**
      * Construye una Variante a partir de los parametros de las variantes
      */
-    Variante(
+    Variante (
             Nat tamanoTab,
             Nat cantFichas,
             const map<Letra, Nat>& puntajes,
             const set<Palabra>& palabrasLegitimas
-    );
+    ) ;
 
     /**
      * Retorna el tamano del tablero de la variante
@@ -36,21 +36,20 @@ public:
     /**
      * Indica si una palabra es legitima o no
      */
-    bool palabraLegitima(const Palabra& palabra) const;
+    bool palabraLegitima(const Palabra &palabra) const;
 
     /**
      * Indica si las palabras son legitimas
      */
-    bool palabrasLegitimas(const list<Palabra&> palabras) const;
+    bool palabrasLegitimas(const list<Palabra> &palabras) const;
 
 private:
 
-    Nat _tamano;
-    Nat _cantidadDeFichas;
-    vector<Nat> _valorLetras;
-    string_map _palabrasPermitidas;
-    vector<Nat> mapAVector(map<Letra, Nat> &puntajes);
-
+    const Nat _tamano;
+    const Nat _cantidadDeFichas;
+    const vector<Nat> _valorLetras;
+    const string_map _palabrasPermitidas;
+    const vector<Nat> mapAVector(const map<Letra, Nat> &puntajes);
 };
 
 

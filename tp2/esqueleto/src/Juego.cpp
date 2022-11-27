@@ -1,7 +1,7 @@
 
 #include "Juego.h"
 
-Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(Variante), _repositorio(Repositorio), _tablero(Tablero(Variante.tamano)), jugadores(k, Jugador()), _cantidadDeTurnos(0), _turnoDe(0) {}
+Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(Variante.tamano)), _jugadores(k, Jugador(v,r)), _cantidadDeTurnos(0), _turnoDe(0) {}
 
 void Juego::ubicar(const Ocurrencia &o) {
 
