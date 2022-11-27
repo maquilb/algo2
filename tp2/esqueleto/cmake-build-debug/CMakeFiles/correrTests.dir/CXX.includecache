@@ -1,0 +1,50 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Juego.cpp
+Juego.h
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Juego.h
+
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Juego.h
+Tipos.h
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Tipos.h
+Variante.h
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Variante.h
+Tablero.hpp
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Tablero.hpp
+
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Tablero.hpp
+
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Tipos.h
+cstdlib
+-
+cassert
+-
+iostream
+-
+set
+-
+tuple
+-
+string
+-
+map
+-
+list
+-
+vector
+-
+
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Variante.cpp
+Variante.h
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Variante.h
+
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Variante.h
+Tipos.h
+/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Tipos.h
+
