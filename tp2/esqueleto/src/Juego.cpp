@@ -22,16 +22,52 @@ const Variante &Juego::variante() {
     return _variante;
 }
 
+
+
+
+
+Nat Juego::cantDeJugadores() {
+    return _jugadores.size();
+}
+
+const Repositorio &Juego::repositorio() {
+    return _repositorio;
+}
+
+const Tablero &Juego::tablero() {
+    return _tablero;
+}
+
+const Tablero &Juego::posDeTablero(Nat i, Nat j) {
+    return _tablero[i][j];
+}
+
+Nat Juego::turnoActual() {
+    return _turnoDe;
+}
+
+const vector<Nat> Juego::fichasDeJugador(Nat i){
+    return _jugadores[i]._fichasDelJugador;
+}
+
+Nat Juego::cantDeFichasLetra(IdCliente id, Letra l) {
+    return _jugadores[id]._fichasDelJugador[ord(l)];
+}
+
+
+
+
+
 bool Juego::jugadaValida(const Ocurrencia &o) {
     return false;
 }
 
 bool Juego::hayLetra(Nat x, Nat y) {
-    return false;
+    return _tablero.hayLetra(x, y);
 }
 
 Letra Juego::letra(Nat i, Nat j) {
-    return 0;
+    return _tablero.letra(i, j);
 }
 
 Nat Juego::puntaje(IdCliente id) {
@@ -42,9 +78,6 @@ Nat Juego::puntaje(IdCliente id) {
     return _jugadores[id]._puntajeDelJugador;
 }
 
-Nat Juego::cantFicha(IdCliente id, Letra l) {
-    return 0;
-}
 
 
 

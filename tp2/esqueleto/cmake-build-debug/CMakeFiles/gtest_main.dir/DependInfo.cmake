@@ -1,15 +1,14 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/gtest-1.8.1/gtest_main.cc" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/gtest_main.dir/tests/gtest-1.8.1/gtest_main.cc.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/gtest-1.8.1/gtest_main.cc" "CMakeFiles/gtest_main.dir/tests/gtest-1.8.1/gtest_main.cc.obj" "gcc" "CMakeFiles/gtest_main.dir/tests/gtest-1.8.1/gtest_main.cc.obj.d"
   )
 
 # Targets to which this target links.

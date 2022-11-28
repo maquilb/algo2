@@ -1,2 +1,2 @@
-/usr/bin/ar qc libgtest.a CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.o
-/usr/bin/ranlib libgtest.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ar.exe qc libgtest.a "CMakeFiles/gtest.dir/tests/gtest-1.8.1/gtest-all.cc.obj"
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ranlib.exe libgtest.a

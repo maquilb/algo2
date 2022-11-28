@@ -8,269 +8,269 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="correrValgrind">
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 correrValgrind"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="correrTests">
-				<Option output="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/correrTests" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 correrTests"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="correrTests/fast">
-				<Option output="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/correrTests" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 correrTests/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gtest_main">
-				<Option output="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest_main"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gtest_main/fast">
-				<Option output="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest">
-				<Option output="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/libgtest.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
+				<Option output="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest/fast">
-				<Option output="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/libgtest.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug"/>
+				<Option output="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/USER/Downloads/TP2\ -\ esqueleto\ y\ enunciado/entregable_alumnos/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="correrTests">
+				<Option output="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/correrTests.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 correrTests"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="correrTests/fast">
+				<Option output="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/correrTests.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 correrTests/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="correrValgrind">
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 correrValgrind"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Fachada_Juego.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Fachada_Juego.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Fachada_Servidor.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Fachada_Servidor.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Fachada_Variante.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Fachada_Variante.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Juego.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Juego.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Juego.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Juego.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Letra.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Letra.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Letra.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Letra.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Notificacion.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Notificacion.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Notificacion.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Notificacion.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Servidor.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Servidor.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Servidor.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Servidor.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Tablero.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Tablero.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Tablero.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Tablero.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Tipos.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Tipos.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Variante.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Variante.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Variante.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Variante.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/gtest-1.8.1/gtest-all.cc">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/gtest-1.8.1/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/gtest-1.8.1/gtest_main.cc">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/gtest-1.8.1/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/juego-empezado-tests.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/juego-empezado-tests.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/juego-grande-tests.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/juego-grande-tests.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/juego-tests.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/juego-tests.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/juego-trivial-tests.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/juego-trivial-tests.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/letra-tests.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/letra-tests.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/notificacion-tests.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/notificacion-tests.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/servidor-tests.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/servidor-tests.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/utils/NotificacionesUtils.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/utils/NotificacionesUtils.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/utils/NotificacionesUtils.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/utils/NotificacionesUtils.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/utils/PalabrasComunes.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/utils/PalabrasComunes.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/utils/PalabrasComunes.h">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/utils/PalabrasComunes.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/variante-tests.cpp">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/variante-tests.cpp">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/CMakeLists.txt">
+		<Unit filename="C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -1,36 +1,35 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Juego.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/src/Juego.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Letra.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/src/Letra.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Notificacion.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/src/Notificacion.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Servidor.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/src/Servidor.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Tablero.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/src/Tablero.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/src/Variante.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/src/Variante.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/juego-empezado-tests.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/juego-grande-tests.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/juego-tests.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/juego-tests.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/juego-trivial-tests.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/letra-tests.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/letra-tests.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/notificacion-tests.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/servidor-tests.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/utils/NotificacionesUtils.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/utils/PalabrasComunes.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.o"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/tests/variante-tests.cpp" "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir/tests/variante-tests.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Juego.cpp" "CMakeFiles/correrTests.dir/src/Juego.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/src/Juego.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Letra.cpp" "CMakeFiles/correrTests.dir/src/Letra.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/src/Letra.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Notificacion.cpp" "CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Servidor.cpp" "CMakeFiles/correrTests.dir/src/Servidor.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/src/Servidor.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Tablero.cpp" "CMakeFiles/correrTests.dir/src/Tablero.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/src/Tablero.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/src/Variante.cpp" "CMakeFiles/correrTests.dir/src/Variante.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/src/Variante.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/juego-empezado-tests.cpp" "CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/juego-grande-tests.cpp" "CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/juego-tests.cpp" "CMakeFiles/correrTests.dir/tests/juego-tests.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/juego-tests.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/juego-trivial-tests.cpp" "CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/letra-tests.cpp" "CMakeFiles/correrTests.dir/tests/letra-tests.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/letra-tests.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/notificacion-tests.cpp" "CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/servidor-tests.cpp" "CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/utils/NotificacionesUtils.cpp" "CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/utils/PalabrasComunes.cpp" "CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj.d"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/tests/variante-tests.cpp" "CMakeFiles/correrTests.dir/tests/variante-tests.cpp.obj" "gcc" "CMakeFiles/correrTests.dir/tests/variante-tests.cpp.obj.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "/mnt/c/Users/USER/Downloads/TP2 - esqueleto y enunciado/entregable_alumnos/esqueleto/cmake-build-debug/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "C:/Users/gugli/Desktop/Talleres/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

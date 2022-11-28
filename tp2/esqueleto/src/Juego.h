@@ -38,6 +38,68 @@ public:
      */
     const Variante& variante();
 
+
+
+
+    /**
+     * Retorna la cantidad de jugadores en el juego
+     *
+     * Complejidad: O(1)
+     */
+    Nat cantDeJugadores();
+
+    /**
+     * Retorna el repositorio del juego
+     *
+     * Complejidad: O(1)
+     */
+    const Repositorio& repositorio();
+
+    /**
+     * Retorna el tablero del juego
+     *
+     * Complejidad: O(1)
+     */
+    const Tablero& tablero();
+
+    /**
+     * Dada una posición del tablero, devuelve si está ocupada, la letra que lo ocupa y el turno en el que fue ubicada la ficha (si está vacía, devuelve la primera letra del alfabeto y el turno 0)
+     *
+     * Complejidad: O(1)
+     */
+    const Tablero& posDeTablero(Nat i, Nat j);
+
+    /**
+     * Retorna el jugador a quien le toca jugar
+     *
+     * Complejidad: O(1)
+     */
+    Nat turnoActual();
+
+    /**
+     * Retorna la cantidad de fichas de cada letra que tiene el jugador
+     *
+     * Complejidad: O(1)
+     */
+    const vector<Nat> fichasDeJugador(Nat i);
+
+    /**
+     * Dado un jugador id y una letra l, retorna cuantas fichas tiene el jugador de dicha letra.
+     *
+     * Complejidad: O(1)
+     */
+    Nat cantDeFichasLetra(IdCliente id, Letra l);
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Determina si una jugada es valida o no
      *
@@ -155,6 +217,8 @@ private:
             res += calcularPuntos(palabras);
         }
     };
+
+
 };
 
 
