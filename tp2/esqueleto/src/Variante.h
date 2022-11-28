@@ -3,7 +3,6 @@
 
 #include "Tipos.h"
 #include "Letra.h"
-#include "string_map"
 
 
 class Variante {
@@ -47,8 +46,8 @@ private:
 
     const Nat _tamano;
     const Nat _cantidadDeFichas;
-    const vector<Nat> _valorLetras;
-    const string_map _palabrasPermitidas;
+    vector<Nat> _valorLetras;
+    string_map<bool> _palabrasPermitidas;
     const vector<Nat> mapAVector(const map<Letra, Nat> &puntajes);
 };
 

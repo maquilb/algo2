@@ -77,17 +77,17 @@ public:
 
 private:
     struct Jugador {
-        const vector<Nat> _fichasDelJugador;
+        vector<Nat> _fichasDelJugador;
         Nat _puntajeDelJugador;
-        queue<Palabra> _ocurrenciasDelJugador;
+        queue<Ocurrencia> _ocurrenciasDelJugador;
         Jugador(Variante v, Repositorio r) : _fichasDelJugador(CrearBolsaFichas(v.fichas(),r)), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
         // por fines practicos es un tupla de 3 elemntos
         const vector<Nat> CrearBolsaFichas(const Nat &f, Repositorio &r) {
             vector<Nat> res(f);
             for(Nat i = 0; i<f; i++){
                 Letra l  = r.front();
-                r.pop_front();
                 res[ord(l)]++;
+                r.pop_front();
             }
             return res;
         }
@@ -99,6 +99,62 @@ private:
     Nat _cantidadDeTurnos;
     Nat _turnoDe;
 
+    /**
+     * Definimos la funcion reponerFichas, que repone las fichas en la bolsa del jugador
+     **/
+
+    void reponerFichas(const Ocurrencia o) {
+        auto it = o.begin();
+        while (it != o.end()){
+            tuple<Nat, Nat, Letra> ficha = *it;
+            Letra l = get<2>(ficha);
+            _jugadores[_turnoDe]._fichasDelJugador[ord(l)]--;
+            Letra nueva_l = _repositorio.front();
+            _jugadores[_turnoDe]._fichasDelJugador[ord(nueva_l)]++;
+            _repositorio.pop_front();
+            it ++;
+        }
+    };
+
+    Nat calcularPuntos(queue<Palabra> &palabras){
+        Nat res = 0;
+        while(!palabras.empty()){
+            Palabra p = palabras.front();
+            for (Nat i=0; i<p.size(); i++){
+                Letra l = p[i];
+                res += _variante.puntajeLetra(l);
+            }
+            palabras.pop();
+        }
+    };
+
+    tuple<bool, bool> HorizontalOVertical(Ocurrencia o){
+        tuple<bool, bool> res;
+        get<0>(res) = true;
+        get<1>(res) = true;
+        if (o.size()>0){
+
+        }
+
+    };
+
+    queue<Palabra> palabrasFormadas(Ocurrencia o){
+        if (o.size()>0){
+            tuple<bool,bool> esHorizontalOVertical = HorizontalOVertical(o);
+        } else {
+            return queue<Palabra>();
+        }
+    };
+
+    Nat  calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus){
+        Nat res = 0;
+        while(!ocus.empty()){
+            Ocurrencia p = ocus.front();
+            queue<Palabra> palabras = palabrasFormadas(p);
+            ocus.pop();
+            res += calcularPuntos(palabras);
+        }
+    };
 };
 
 
