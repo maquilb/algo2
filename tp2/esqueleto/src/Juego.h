@@ -1,7 +1,7 @@
 #ifndef JUEGO_H
 #define JUEGO_H
 
-#include "queue"
+#include <queue>
 #include "Tipos.h"
 #include "Variante.h"
 #include "Tablero.h"

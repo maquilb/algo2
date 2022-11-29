@@ -10,6 +10,7 @@
 #include <map>
 #include <list>
 #include <vector>
+#include "Notificacion.h"
 
 using namespace std;
 
@@ -23,7 +24,10 @@ using IdCliente = Nat;
 
 using Ocurrencia = set<tuple<Nat, Nat, Letra>>;
 
+using Ficha = tuple<Nat, Nat, Letra>;
+
 using Palabra = vector<Letra>;
+
 
 #endif // TIPOS_H
 

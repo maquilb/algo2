@@ -3,6 +3,7 @@
 
 #include "Tipos.h"
 #include "Fachada_Variante.h"
+#include "Juego.h"
 
 
 class Fachada_Juego {
@@ -12,7 +13,7 @@ public:
      *
      * Complejidad: O(tamanoTab**2 + ALPHABET_SIZE*cantJugadores + cantFichas*cantJugadores)
      */
-    Fachada_Juego(Nat k, const Fachada_Variante& v, const Repositorio& r);
+    Fachada_Juego(Nat k, const Fachada_Variante& v, const Repositorio& r): _juego(k, v, r), _fvariante(v){};
 
     /**
      * Ubica una Ocurrencia o en el juego
@@ -20,42 +21,54 @@ public:
      * Complejidad: O(m)
      *   donde m es el numero de fichas que se ubican
      */
-    void ubicar(const Ocurrencia& o);
+    void ubicar(const Ocurrencia& o){
+        _juego.ubicar(o);
+    };
 
     /**
      * Retorna el id del cliente al cual le toca jugar
      *
      * Complejidad: O(1)
      */
-    IdCliente turno();
+    IdCliente turno(){
+        return _juego.turno();
+    };
 
     /**
      * Retorna informacion sobre la variante del juego
      *
      * Complejidad: O(1)
      */
-    const Fachada_Variante& variante();
+    const Fachada_Variante& variante(){
+        return _fvariante;
+    };
 
     /**
      * Determina si una jugada es valida o no
      *
      * Complejidad: O(Lmax ** 2)
      */
-    bool jugadaValida(const Ocurrencia& o);
+    bool jugadaValida(const Ocurrencia& o){
+        return _juego.jugadaValida(o);
+    };
 
     /**
      * Retorna true sii la coordenada se encuentra ocupada.
      *
      * Complejidad: O(1)
      */
-    bool hayLetra(Nat x, Nat y);
+    bool hayLetra(Nat x, Nat y){
+        return _juego.hayLetra(x, y);
+    };
 
     /**
      * Obtiene el contenido del tablero en una coordenada.
      *
      * Complejidad: O(1)
      */
-    Letra letra(Nat i, Nat j);
+    Letra letra(Nat i, Nat j){
+        return _juego.letra(i, j);
+    };
 
     /**
      * Retorna el puntaje del jugador id
@@ -63,7 +76,9 @@ public:
      * Complejidad: O(1 + m*Lmax)
      *   donde m es la cantidad de fichas que ubico el jugador desde la ultima vez que se preguntó por su puntaje.
      */
-    Nat puntaje(IdCliente id);
+    Nat puntaje(IdCliente id){
+        return _juego.puntaje(id);
+    };
 
 
     /**
@@ -71,10 +86,13 @@ public:
      *
      * Complejidad: O(1)
      */
-    Nat cantFicha(IdCliente id, Letra l);
+    Nat cantFicha(IdCliente id, Letra l){
+        return _juego.cantFicha(id, l);
+    };
 
 private:
-    // Completar
+    Juego _juego;
+    Fachada_Variante _fvariante;
 };
 
 #endif // FACHADA_JUEGO_H
