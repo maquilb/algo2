@@ -16,6 +16,8 @@ Ficha masChico(Ficha ficha1, Ficha ficha2, bool sentido);
 
 vector<Ficha> ocurrenciaAVector(const Ocurrencia &o, bool sentido);
 
+Palabra principalHorizontal(const Tablero &tablero, const vector<Ficha> &vector1);
+
 Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(Variante.tamano)), _jugadores(k, Jugador(v, r)), _cantidadDeTurnos(0), _turnoDe(0) {}
 
 void Juego::ubicar(const Ocurrencia &o) {
@@ -254,7 +256,7 @@ bool jugadaValida(const Ocurrencia& o) {
         return true;
     } else {
         const Variante &varJ = this->_Variante;
-        Nat largoMax = 256; // implementar funcion de trie
+        Nat largoMax = lmax()
 
         if (res && (varJ.fichas() < o.size() or largoMax < o.size())) res = false;
 
@@ -384,6 +386,41 @@ Nat distanciaEntreFichas(Ficha min, Ficha max, bool sentido) {
     return (sentido)? get<0>(max) - get<0>(min) : get<1>(max) - get<1>(min);
 }
 
+list<Palabra> Juego::palabrasTransversales(const Tablero& tab, const Ocurrencia& o, bool sentido) {
+    list<Palabra> res;
+    auto it = o.begin();
+    while(it != o.end()){
+        Ficha f= *it;
+        Palabra palabra();
+        if (sentido){
+            palabra =  palabraTransversalVertical(tab, f);
+        } else {
+            palabra =  palabraTransversalHorizontal(tab, f);
+        }
+        res.push(palabra);
+        it++;
+    }
+    return res;
+}
+
+Palabra Juego::palabraTransversalHorizontal(const Tablero& tab, const Fichas& f){
+    Palabra res;
+    Nat fila = get<0>(f);
+    Nat Columna = get<1>(f);
+    Nat Arriba = fila - 1;
+    Nat Abajo = fila + 1;
+    res.push_back(get<2>(f));
+    while( tab.estaOcupada(arriba,columna)){
+        Letra letra0 = tab.LetraEnPos(arriba,columna);
+        res.push_front(letra0);
+        Arriba--;
+    }
+    while( tab.ocupada(abajo,columna)){
+        Letra letra0 = tab.LetraEnPos(abajo,columna);
+        res.push_back(letra0);
+        Abajo++;
+    }
+}
 
 vector<Ficha> ocurrenciaAVector(const Ocurrencia &o) {
     vector<Ficha> res;
@@ -415,3 +452,94 @@ void ordenarVectorDeFichas(vector<Ficha> vect_fichas, bool sentido) {
         i++;
     }
 }
+
+
+Palabra FormarPalabraPrincipal( const Tablero& tab, const Ocurrencia& o ,bool sentido) {
+    vector<Ficha> fichas = ocurrenciaAVector(o);
+    ordenarVectorDeFichas(fichas, sentido);
+    Palabra res;
+    if (sentido) {
+        res = principalHorizontal(tab, fichas);
+    } else {
+        res = principalVertical(tab, fichas);
+    }
+    return res;
+}
+
+Palabra principalHorizontal(const Tablero &tablero, const vector<Ficha> &fichas) {
+    Palabra res;
+    res.push_back(get<2>(fichas[0]));
+    Nat fila = get<0>(fichas[0]);
+    Nat columna = get<1>(fichas[0]);
+    Nat izquierda = columna - 1;
+    Nat derecha = columna + 1;
+    int i = 1;
+    bool esContigua = true;
+    bool termino = false;
+    while( 0 <= izquierda && tablero.hayUnaLetraEnPos(fila,izquierda)){
+        Letra letraIzquierda = tablero.letraEnPos(fila,izquierda);
+        res.push_front(letraIzquierda);
+        izquierda--;
+    }
+    while(derecha < tablero.tamanio() && not termino && esContigua){
+        if(tablero.hayUnaLetraEnPos(fila,derecha)){
+            Letra letraDerecha = tablero.letraEnPos(fila,derecha);
+            res.push_back(letraDerecha);
+        }else{
+            if(i == fichas.size()){
+                termino = true;
+            }else{
+                if(get<1>(fichas[i]) == derecha){
+                    Letra LetraNueva = get<2>(fichas[i]);
+                    res.push_back(LetraNueva);
+                    i++;
+                }else{
+                    res = Palabra();
+                    esContigua = false;
+                }
+            }
+        }
+        derecha++;
+    }
+    return res;
+}
+
+
+Palabra principalVertical(const Tablero &tablero, const vector<Ficha> &fichas) {
+    Palabra res;
+    res.push_back(get<2>(fichas[0]));
+    Nat fila = get<0>(fichas[0]);
+    Nat columna = get<1>(fichas[0]);
+    Nat arriba = fila - 1;
+    Nat abajo = fila + 1;
+    int i = 1;
+    bool esContigua = true;
+    bool termino = false;
+    while( 0 <= arriba && tablero.hayUnaLetraEnPos(arriba,columna)){
+        Letra letraArriba = tablero.letraEnPos(arriba,columna);
+        res.push_front(letraArriba);
+        arriba--;
+    }
+    while(abajo < tablero.tamanio() && not termino && esContigua){
+        if(tablero.hayUnaLetraEnPos(abajo,columna)){
+            Letra letraAbajo = tablero.letraEnPos(abajo,columna);
+            res.push_back(letraAbajo);
+        }else{
+            if(i == fichas.size()){
+                termino = true;
+            }else{
+                if(get<0>(fichas[i]) == abajo){
+                    Letra LetraNueva = get<2>(fichas[i]);
+                    res.push_back(LetraNueva);
+                    i++;
+                }else{
+                    res = Palabra();
+                    esContigua = false;
+                }
+            }
+        }
+        abajo++;
+    }
+    return res;
+}
+
