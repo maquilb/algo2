@@ -407,6 +407,25 @@ Palabra Juego::palabraTransversalHorizontal(const Tablero& tab, const Fichas& f)
     Palabra res;
     Nat fila = get<0>(f);
     Nat Columna = get<1>(f);
+    Nat izquierda = Columna - 1;
+    Nat derecha = Columna + 1;
+    res.push_back(get<2>(f));
+    while( tab.estaOcupada(fila,derecha)){
+        Letra letra0 = tab.LetraEnPos(fila,derecha);
+        res.push_front(letra0);
+        derecha++;
+    }
+    while( tab.ocupada(fila,izquierda)){
+        Letra letra0 = tab.LetraEnPos(fila,izquierda);
+        res.push_back(letra0);
+        izquierda++;
+    }
+}
+
+Palabra Juego::palabraTransversalVertical(const Tablero& tab, const Fichas& f){
+    Palabra res;
+    Nat fila = get<0>(f);
+    Nat Columna = get<1>(f);
     Nat Arriba = fila - 1;
     Nat Abajo = fila + 1;
     res.push_back(get<2>(f));
