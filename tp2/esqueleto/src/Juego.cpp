@@ -1,7 +1,22 @@
 
 #include "Juego.h"
+#include "Tablero.hpp"
 
-Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(Variante.tamano)), _jugadores(k, Jugador(v,r)), _cantidadDeTurnos(0), _turnoDe(0) {}
+bool tieneLasFichas(vector<Nat> &vector, const Ocurrencia &set);
+
+void SumarAparicion(vector<tuple<Letra, Nat>> apariciones, Letra l);
+
+bool ocurrenciaSinPosicionesRepetidas(const Ocurrencia &set);
+
+bool DistanciaMayorAlongMax(const Ocurrencia &o, bool sentido, Nat largoMax);
+
+Nat distanciaEntreFichas(Ficha min, Ficha max, bool sentido);
+
+Ficha masChico(Ficha ficha1, Ficha ficha2, bool sentido);
+
+vector<Ficha> ocurrenciaAVector(const Ocurrencia &o, bool sentido);
+
+Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(Variante.tamano)), _jugadores(k, Jugador(v, r)), _cantidadDeTurnos(0), _turnoDe(0) {}
 
 void Juego::ubicar(const Ocurrencia &o) {
     ponerLetras(_tablero, o, _cantidadDeTurnos);
@@ -233,9 +248,170 @@ Repositorio Juego::formarPalabraJugadaPrincial(Ocurrencia o, bool sentido) {
     return res;
 }
 
+bool jugadaValida(const Ocurrencia& o) {
+    bool res = true;
+    if (o.empty()) {
+        return true;
+    } else {
+        const Variante &varJ = this->_Variante;
+        Nat largoMax = 256; // implementar funcion de trie
+
+        if (res && (varJ.fichas() < o.size() or largoMax < o.size())) res = false;
+
+        vector<Nat> &fichasJugador = (this->_jugadores[this->_turnoDe])->_fichasDelJugador;
+
+        if (res && not tieneLasFichas(fichasJugador, o)) res = false;
+
+        if (res && not _tablero.sonCeldasLibres(o)) res = false; // ¿porque me pone mal _tablero?
+
+        bool esHorizontal = false;
+        bool esVertical = false;
+
+        if (res) {
+            tuple<bool,bool> esHorizontalOVertical = HorizontalOVertical(o); // hay que crear metodo const
+            esHorizontal = get<0>(esHorizontalOVertical);
+            esVertical = get<1>(esHorizontalOVertical);
+            if (not(esHorizontal or esVertical)) {
+                res = false;
+            }
+        }
+
+        if (res && not ocurrenciaSinPosicionesRepetidas(o)) res = false;
+
+        bool sentido = true;
+        if (res && esVertical) sentido = false;
+
+        if (res && 2 <= o.size() && DistanciaMayorAlongMax(o, sentido, largoMax)) res = false;
+
+        if (res) {
+            Palabra palabraPrincipal = formarPalabraPrincipal(this->_tablero, o, sentido);
+            if ( not varJ.palabraLegitima(palabraPrincipal)) res = false;
+            if(res){
+                list<Palabra> palabras = PalabrasTransversales(this->_tablero,o,sentido);
+                if(not varJ.palabrasLegitimas(palabras)) res = false;
+
+            }
+        }
+    }
+    return res;
+}
+
+bool tieneLasFichas(vector<Nat> &fichas, const Ocurrencia &set) {
+    bool res = true;
+    vector<tuple<Letra,Nat>>apariciones;
+    for ( auto const & f : set) {
+        Letra letra0 = get<2>(f);
+        SumarAparicion(apariciones,letra0);
+    }
+    int i = 0;
+    while(res && i < apariciones.size()){
+        Letra letra0 = get<0>(apariciones[i]);
+        Nat cant = get<1>(apariciones[i]);
+        if(fichas[ord(letra0)]) < cant) res = false;
+        i++;
+    }
+
+    return res;
+}
+
+void SumarAparicion(vector<tuple<Letra, Nat>>& apariciones, Letra l) {
+    bool noEsta = true;
+    int i = 0;
+    while( noEsta && i < apariciones.size()){
+        if(get<0>(apariciones[i]) == l){
+            noEsta = false;
+            get<1>(apariciones[i])++;
+        }
+    }
+    if( noEsta ) apariciones.push_back(make_tuple(l,1));
+}
+
+bool ocurrenciaSinPosicionesRepetidas(const Ocurrencia &o) {
+    bool res = true;
+    auto it0 = o.begin();
+    while (res && it0 != o.end()){
+        Ficha ficha0 = *it0;
+        auto it1 = it0;
+        it1++;
+        while(res && it1 != o.end()){
+            Ficha ficha1 = *it1;
+            if(get<0>(ficha0) == get<0>(ficha1) && get<1>(ficha0) == get<1>(ficha1)){
+                res = false;
+            }
+            it1++;
+        }
+        it0++;
+    }
+    return res;
+}
+
+bool DistanciaMayorAlongMax(const Ocurrencia &o, bool sentido, Nat largoMax) {
+    bool res = false;
+    auto it = o.begin();
+    Ficha min = *it, max = *it;
+    it++;
+    Nat distancia = 0;
+    while(not res && it != o.end()){
+        Ficha ficha0 = *it;
+        min = masChico(min,ficha0, sentido);
+        max = masGrande(max, ficha0, sentido);
+        distancia = distanciaEntreFichas(min,max,sentido);
+        if(largoMax < distancia) res = true;
+    }
+    return res;
+}
+
+Ficha masChico(Ficha ficha1, Ficha ficha2, bool sentido) {
+    Ficha res = ficha1;
+    if(sentido){
+        if(get<0>(ficha2) < get<0>(ficha1)) res = ficha2;
+    }else{
+        if(get<1>(ficha2) < get<1>(ficha1)) res = ficha2;
+    }
+    return res;
+}
+
+Ficha masGrande(Ficha ficha1, Ficha ficha2, bool sentido) {
+    Ficha res = ficha1;
+    if(sentido){
+        if(get<0>(ficha2) > get<0>(ficha1)) res = ficha2;
+    }else{
+        if(get<1>(ficha2) > get<1>(ficha1)) res = ficha2;
+    }
+    return res;}
+
+Nat distanciaEntreFichas(Ficha min, Ficha max, bool sentido) {
+    return (sentido)? get<0>(max) - get<0>(min) : get<1>(max) - get<1>(min);
+}
 
 
+vector<Ficha> ocurrenciaAVector(const Ocurrencia &o) {
+    vector<Ficha> res;
+    auto it = o.begin();
+    while( it != o.end()){
+        Ficha fich = *it;
+        res.push_back(fich);
+    }
+    return res;
+}
 
-
-
-
+void ordenarVectorDeFichas(vector<Ficha> vect_fichas, bool sentido) {
+    bool swapped = true;
+    int i = vect_fichas.size();
+    while(swapped) {
+        swapped = false;
+        int j = 0;
+        while (j < i) {
+            bool mayorFila = get<0>(vect_fichas[j]) > get<0>(vect_fichas[j+1]);
+            bool mayorColumna = get<1>(vect_fichas[j]) > get<1>(vect_fichas[j+1]);
+            if((mayorFila and sentido) or ((not sentido) and mayorColumna)){
+                Ficha temp = vect_fichas[j];
+                vect_fichas[j] = vect_fichas[j+1];
+                vect_fichas[j+1] = temp;
+                swapped = true;
+                j++;
+            }
+        }
+        i++;
+    }
+}
