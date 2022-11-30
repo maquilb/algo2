@@ -1,6 +1,0 @@
-/mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-valgrind-wsl/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-valgrind-wsl/CMakeFiles/edit_cache.dir
-/mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-valgrind-wsl/CMakeFiles/correrValgrind.dir
-/mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-valgrind-wsl/CMakeFiles/correrTests.dir
-/mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-valgrind-wsl/CMakeFiles/gtest_main.dir
-/mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-valgrind-wsl/CMakeFiles/gtest.dir

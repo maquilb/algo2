@@ -1,6 +1,0 @@
-C:/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/CMakeFiles/gtest.dir
-C:/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/CMakeFiles/gtest_main.dir
-C:/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/CMakeFiles/correrTests.dir
-C:/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/CMakeFiles/correrValgrind.dir
-C:/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-debug/CMakeFiles/rebuild_cache.dir
