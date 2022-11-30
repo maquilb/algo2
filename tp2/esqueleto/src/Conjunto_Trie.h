@@ -13,16 +13,16 @@ public:
 
     ~conjunto_Trie();
 
-    void agregar(const Palabra &palabra);
+    void agregar(Repositorio &palabra);
 
     bool esVacio();
 
-    bool pertenece(const Palabra &palabra) const;
+    bool pertenece(const Repositorio &palabra) const;
 
     /* Longitud de la palabra mas larga */
     Nat lmax() const;
 
-    void agregarPalabras(set<Palabra> &palabras);
+    void agregarPalabras(set<Repositorio> &palabras);
 
 private:
     struct Nodo{

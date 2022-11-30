@@ -3,6 +3,8 @@
 
 #include "Tipos.h"
 #include "Letra.h"
+#include "Conjunto_Trie.h"
+#include "Tablero.h"
 
 
 class Variante {
@@ -14,7 +16,7 @@ public:
             Nat tamanoTab,
             Nat cantFichas,
             const map<Letra, Nat>& puntajes,
-            const set<Palabra>& palabrasLegitimas
+            const set<Repositorio>& palabrasLegitimas
     ) ;
 
     /**
@@ -35,20 +37,24 @@ public:
     /**
      * Indica si una palabra es legitima o no
      */
-    bool palabraLegitima(const Palabra &palabra) const;
+    bool palabraLegitima(const Repositorio &palabra) const;
 
     /**
      * Indica si las palabras son legitimas
      */
-    bool palabrasLegitimas(const list<Palabra> &palabras) const;
+    bool palabrasLegitimas(const list<Repositorio> &palabras) const;
+
+    /**
+     * Indica la palabra mas larga del diccionario
+     */
+    Nat lmax();
 
 private:
 
     const Nat _tamano;
     const Nat _cantidadDeFichas;
     vector<Nat> _valorLetras;
-    string_map<bool> _palabrasPermitidas;
-    const vector<Nat> mapAVector(const map<Letra, Nat> &puntajes);
+    conjunto_Trie _palabrasPermitidas;
 };
 
 

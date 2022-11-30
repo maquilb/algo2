@@ -1,27 +1,10 @@
 
 #include "Juego.h"
-#include "Tablero.hpp"
 
-bool tieneLasFichas(vector<Nat> &vector, const Ocurrencia &set);
-
-void SumarAparicion(vector<tuple<Letra, Nat>> apariciones, Letra l);
-
-bool ocurrenciaSinPosicionesRepetidas(const Ocurrencia &set);
-
-bool DistanciaMayorAlongMax(const Ocurrencia &o, bool sentido, Nat largoMax);
-
-Nat distanciaEntreFichas(Ficha min, Ficha max, bool sentido);
-
-Ficha masChico(Ficha ficha1, Ficha ficha2, bool sentido);
-
-vector<Ficha> ocurrenciaAVector(const Ocurrencia &o, bool sentido);
-
-Palabra principalHorizontal(const Tablero &tablero, const vector<Ficha> &vector1);
-
-Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(Variante.tamano)), _jugadores(k, Jugador(v, r)), _cantidadDeTurnos(0), _turnoDe(0) {}
+Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(_variante.tamanoTablero())), _jugadores(k, Jugador(v, r)), _cantidadDeTurnos(0), _turnoDe(0) {}
 
 void Juego::ubicar(const Ocurrencia &o) {
-    ponerLetras(_tablero, o, _cantidadDeTurnos);
+    _tablero.ponerLetras(o, _cantidadDeTurnos);
     _cantidadDeTurnos ++;
     _turnoDe ++;
     if (_turnoDe == _jugadores.size()){
@@ -51,8 +34,12 @@ const Tablero &Juego::tablero() {
     return _tablero;
 }
 
-const Tablero &Juego::posDeTablero(Nat i, Nat j) {
-    return _tablero[i][j];
+const tuple<bool, Letra, Nat> Juego::posDeTablero(Nat i, Nat j) {
+    bool hayLetra = _tablero.hayUnaLetraEnPos(i, j);
+    Letra letra = _tablero.letraEnPos(i, j);
+    Nat turno = _tablero.turnoApoyado(i,j);
+    const tuple<bool, Letra, Nat> res = make_tuple(hayLetra, letra, turno);
+    return res;
 }
 
 Nat Juego::turnoActual() {
@@ -67,17 +54,12 @@ Nat Juego::cantDeFichasLetra(IdCliente id, Letra l) {
     return _jugadores[id]._fichasDelJugador[ord(l)];
 }
 
-
-bool Juego::jugadaValida(const Ocurrencia &o) {
-    return false;
-}
-
 bool Juego::hayLetra(Nat x, Nat y) {
-    return _tablero.hayLetra(x, y);
+    return _tablero.hayUnaLetraEnPos(x, y);
 }
 
 Letra Juego::letra(Nat i, Nat j) {
-    return _tablero.letra(i, j);
+    return _tablero.letraEnPos(i, j);
 }
 
 Nat Juego::puntaje(IdCliente id) {
@@ -185,14 +167,14 @@ Repositorio Juego::palabraFormadaVertical(Ficha f) {
     Nat columna = get<1>(f);
     Nat arriba = fila - 1;
     Nat abajo = fila + 1;
-    Nat turno = turnoApoyado(fila, columna);
-    while (0<= arriba && ocupada(arriba, columna) && turno>= turnoApoyado(arriba, columna)){
-        Letra l0 = letraEnPos(arriba, columna);
+    Nat turno = _tablero.turnoApoyado(fila, columna);
+    while (0<= arriba && _tablero.estaOcupada(arriba, columna) && turno>= _tablero.turnoApoyado(arriba, columna)){
+        Letra l0 = _tablero.letraEnPos(arriba, columna);
         res.push_front(l0);
         arriba--;
     }
-    while (abajo <=tablero.size() && ocupada(abajo, columna) && turno>= turnoApoyado(abajo, columna)){
-        Letra l0 = letraEnPos(abajo, columna);
+    while (abajo <= _tablero.tamanio() && _tablero.estaOcupada(abajo, columna) && turno>= _tablero.turnoApoyado(abajo, columna)){
+        Letra l0 = _tablero.letraEnPos(abajo, columna);
         res.push_back(l0);
         abajo++;
     }
@@ -207,14 +189,14 @@ Repositorio Juego::palabraFormadaHorizontal(Ficha f) {
     Nat columna = get<1>(f);
     Nat izquierda = columna - 1;
     Nat derecha = columna + 1;
-    Nat turno = turnoApoyado(fila, columna);
-    while (derecha <=tablero.size() && ocupada(fila, derecha) && turno>= turnoApoyado(fila, derecha)){
-        Letra l0 = letraEnPos(fila, derecha);
+    Nat turno = _tablero.turnoApoyado(fila, columna);
+    while (derecha <=_tablero.tamanio() && _tablero.estaOcupada(fila, derecha) && turno>= _tablero.turnoApoyado(fila, derecha)){
+        Letra l0 = _tablero.letraEnPos(fila, derecha);
         res.push_back(l0);
         derecha++;
     }
-    while (0<= izquierda && ocupada(fila, izquierda) && turno>= turnoApoyado(fila, derecha)){
-        Letra l0 = letraEnPos(fila, izquierda);
+    while (0<= izquierda && _tablero.estaOcupada(fila, izquierda) && turno>= _tablero.turnoApoyado(fila, derecha)){
+        Letra l0 = _tablero.letraEnPos(fila, izquierda);
         res.push_front(l0);
         izquierda--;
     }
@@ -250,21 +232,21 @@ Repositorio Juego::formarPalabraJugadaPrincial(Ocurrencia o, bool sentido) {
     return res;
 }
 
-bool jugadaValida(const Ocurrencia& o) {
+bool Juego::jugadaValida(const Ocurrencia& o) {
     bool res = true;
     if (o.empty()) {
         return true;
     } else {
-        const Variante &varJ = this->_Variante;
-        Nat largoMax = lmax()
+        const Variante &varJ = _variante;
+        Nat largoMax = _variante.lmax();
 
         if (res && (varJ.fichas() < o.size() or largoMax < o.size())) res = false;
 
-        vector<Nat> &fichasJugador = (this->_jugadores[this->_turnoDe])->_fichasDelJugador;
+        vector<Nat> &fichasJugador = (this->_jugadores[this->_turnoDe])._fichasDelJugador;
 
         if (res && not tieneLasFichas(fichasJugador, o)) res = false;
 
-        if (res && not _tablero.sonCeldasLibres(o)) res = false; // ¿porque me pone mal _tablero?
+        if (res && not _tablero.sonCeldasLibres(o)) res = false; // ï¿½porque me pone mal _tablero?
 
         bool esHorizontal = false;
         bool esVertical = false;
@@ -286,10 +268,10 @@ bool jugadaValida(const Ocurrencia& o) {
         if (res && 2 <= o.size() && DistanciaMayorAlongMax(o, sentido, largoMax)) res = false;
 
         if (res) {
-            Palabra palabraPrincipal = formarPalabraPrincipal(this->_tablero, o, sentido);
+            Repositorio palabraPrincipal = FormarPalabraPrincipal(this->_tablero, o, sentido);
             if ( not varJ.palabraLegitima(palabraPrincipal)) res = false;
             if(res){
-                list<Palabra> palabras = PalabrasTransversales(this->_tablero,o,sentido);
+                list<Repositorio> palabras = PalabrasTransversales(this->_tablero,o,sentido);
                 if(not varJ.palabrasLegitimas(palabras)) res = false;
 
             }
@@ -298,7 +280,7 @@ bool jugadaValida(const Ocurrencia& o) {
     return res;
 }
 
-bool tieneLasFichas(vector<Nat> &fichas, const Ocurrencia &set) {
+bool Juego::tieneLasFichas(vector<Nat> &fichas, const Ocurrencia &set) {
     bool res = true;
     vector<tuple<Letra,Nat>>apariciones;
     for ( auto const & f : set) {
@@ -309,14 +291,14 @@ bool tieneLasFichas(vector<Nat> &fichas, const Ocurrencia &set) {
     while(res && i < apariciones.size()){
         Letra letra0 = get<0>(apariciones[i]);
         Nat cant = get<1>(apariciones[i]);
-        if(fichas[ord(letra0)]) < cant) res = false;
+        if(fichas[ord(letra0)] < cant) res = false;
         i++;
     }
 
     return res;
 }
 
-void SumarAparicion(vector<tuple<Letra, Nat>>& apariciones, Letra l) {
+void Juego::SumarAparicion(vector<tuple<Letra, Nat>> apariciones, Letra l) {
     bool noEsta = true;
     int i = 0;
     while( noEsta && i < apariciones.size()){
@@ -328,7 +310,7 @@ void SumarAparicion(vector<tuple<Letra, Nat>>& apariciones, Letra l) {
     if( noEsta ) apariciones.push_back(make_tuple(l,1));
 }
 
-bool ocurrenciaSinPosicionesRepetidas(const Ocurrencia &o) {
+bool Juego::ocurrenciaSinPosicionesRepetidas(const Ocurrencia &o) {
     bool res = true;
     auto it0 = o.begin();
     while (res && it0 != o.end()){
@@ -347,7 +329,7 @@ bool ocurrenciaSinPosicionesRepetidas(const Ocurrencia &o) {
     return res;
 }
 
-bool DistanciaMayorAlongMax(const Ocurrencia &o, bool sentido, Nat largoMax) {
+bool Juego::DistanciaMayorAlongMax(const Ocurrencia &o, bool sentido, Nat largoMax) {
     bool res = false;
     auto it = o.begin();
     Ficha min = *it, max = *it;
@@ -363,7 +345,7 @@ bool DistanciaMayorAlongMax(const Ocurrencia &o, bool sentido, Nat largoMax) {
     return res;
 }
 
-Ficha masChico(Ficha ficha1, Ficha ficha2, bool sentido) {
+Ficha Juego::masChico(Ficha ficha1, Ficha ficha2, bool sentido) {
     Ficha res = ficha1;
     if(sentido){
         if(get<0>(ficha2) < get<0>(ficha1)) res = ficha2;
@@ -373,7 +355,7 @@ Ficha masChico(Ficha ficha1, Ficha ficha2, bool sentido) {
     return res;
 }
 
-Ficha masGrande(Ficha ficha1, Ficha ficha2, bool sentido) {
+Ficha Juego::masGrande(Ficha ficha1, Ficha ficha2, bool sentido) {
     Ficha res = ficha1;
     if(sentido){
         if(get<0>(ficha2) > get<0>(ficha1)) res = ficha2;
@@ -382,66 +364,68 @@ Ficha masGrande(Ficha ficha1, Ficha ficha2, bool sentido) {
     }
     return res;}
 
-Nat distanciaEntreFichas(Ficha min, Ficha max, bool sentido) {
+Nat Juego::distanciaEntreFichas(Ficha min, Ficha max, bool sentido) {
     return (sentido)? get<0>(max) - get<0>(min) : get<1>(max) - get<1>(min);
 }
 
-list<Palabra> Juego::palabrasTransversales(const Tablero& tab, const Ocurrencia& o, bool sentido) {
-    list<Palabra> res;
+list<Repositorio> Juego::PalabrasTransversales(Tablero tab, const Ocurrencia &o, bool sentido){
+    list<Repositorio> res;
     auto it = o.begin();
     while(it != o.end()){
         Ficha f= *it;
-        Palabra palabra();
+        Repositorio palabra;
         if (sentido){
             palabra =  palabraTransversalVertical(tab, f);
         } else {
             palabra =  palabraTransversalHorizontal(tab, f);
         }
-        res.push(palabra);
+        res.push_back(palabra);
         it++;
     }
     return res;
 }
 
-Palabra Juego::palabraTransversalHorizontal(const Tablero& tab, const Fichas& f){
-    Palabra res;
+Repositorio Juego::palabraTransversalHorizontal(const Tablero& tab, const Ficha &f){
+    Repositorio res;
     Nat fila = get<0>(f);
     Nat Columna = get<1>(f);
     Nat izquierda = Columna - 1;
     Nat derecha = Columna + 1;
     res.push_back(get<2>(f));
-    while( tab.estaOcupada(fila,derecha)){
-        Letra letra0 = tab.LetraEnPos(fila,derecha);
+    while( _tablero.estaOcupada(fila,derecha)){
+        Letra letra0 = _tablero.letraEnPos(fila,derecha);
         res.push_front(letra0);
         derecha++;
     }
-    while( tab.ocupada(fila,izquierda)){
-        Letra letra0 = tab.LetraEnPos(fila,izquierda);
+    while( _tablero.estaOcupada(fila,izquierda)){
+        Letra letra0 = _tablero.letraEnPos(fila,izquierda);
         res.push_back(letra0);
         izquierda++;
     }
+    return res;
 }
 
-Palabra Juego::palabraTransversalVertical(const Tablero& tab, const Fichas& f){
-    Palabra res;
+Repositorio Juego::palabraTransversalVertical(const Tablero& tab, const Ficha &f){
+    Repositorio res;
     Nat fila = get<0>(f);
     Nat Columna = get<1>(f);
     Nat Arriba = fila - 1;
     Nat Abajo = fila + 1;
     res.push_back(get<2>(f));
-    while( tab.estaOcupada(arriba,columna)){
-        Letra letra0 = tab.LetraEnPos(arriba,columna);
+    while( _tablero.estaOcupada(Arriba,Columna)){
+        Letra letra0 = _tablero.letraEnPos(Arriba,Columna);
         res.push_front(letra0);
         Arriba--;
     }
-    while( tab.ocupada(abajo,columna)){
-        Letra letra0 = tab.LetraEnPos(abajo,columna);
+    while( _tablero.estaOcupada(Abajo,Columna)){
+        Letra letra0 = _tablero.letraEnPos(Abajo,Columna);
         res.push_back(letra0);
         Abajo++;
     }
+    return res;
 }
 
-vector<Ficha> ocurrenciaAVector(const Ocurrencia &o) {
+vector<Ficha> Juego::ocurrenciaAVector(const Ocurrencia &o) {
     vector<Ficha> res;
     auto it = o.begin();
     while( it != o.end()){
@@ -451,7 +435,7 @@ vector<Ficha> ocurrenciaAVector(const Ocurrencia &o) {
     return res;
 }
 
-void ordenarVectorDeFichas(vector<Ficha> vect_fichas, bool sentido) {
+void Juego::ordenarVectorDeFichas(vector<Ficha> vect_fichas, bool sentido) {
     bool swapped = true;
     int i = vect_fichas.size();
     while(swapped) {
@@ -473,20 +457,20 @@ void ordenarVectorDeFichas(vector<Ficha> vect_fichas, bool sentido) {
 }
 
 
-Palabra FormarPalabraPrincipal( const Tablero& tab, const Ocurrencia& o ,bool sentido) {
+Repositorio Juego::FormarPalabraPrincipal( const Tablero& tab, const Ocurrencia& o ,bool sentido) {
     vector<Ficha> fichas = ocurrenciaAVector(o);
     ordenarVectorDeFichas(fichas, sentido);
-    Palabra res;
+    Repositorio res;
     if (sentido) {
-        res = principalHorizontal(tab, fichas);
+        res = principalHorizontal(_tablero, fichas);
     } else {
-        res = principalVertical(tab, fichas);
+        res = principalVertical(_tablero, fichas);
     }
     return res;
 }
 
-Palabra principalHorizontal(const Tablero &tablero, const vector<Ficha> &fichas) {
-    Palabra res;
+Repositorio Juego::principalHorizontal(const Tablero &tablero, const vector<Ficha> &fichas) {
+    Repositorio res;
     res.push_back(get<2>(fichas[0]));
     Nat fila = get<0>(fichas[0]);
     Nat columna = get<1>(fichas[0]);
@@ -495,14 +479,14 @@ Palabra principalHorizontal(const Tablero &tablero, const vector<Ficha> &fichas)
     int i = 1;
     bool esContigua = true;
     bool termino = false;
-    while( 0 <= izquierda && tablero.hayUnaLetraEnPos(fila,izquierda)){
-        Letra letraIzquierda = tablero.letraEnPos(fila,izquierda);
+    while( 0 <= izquierda && _tablero.hayUnaLetraEnPos(fila,izquierda)){
+        Letra letraIzquierda = _tablero.letraEnPos(fila,izquierda);
         res.push_front(letraIzquierda);
         izquierda--;
     }
-    while(derecha < tablero.tamanio() && not termino && esContigua){
-        if(tablero.hayUnaLetraEnPos(fila,derecha)){
-            Letra letraDerecha = tablero.letraEnPos(fila,derecha);
+    while(derecha < _tablero.tamanio() && not termino && esContigua){
+        if(_tablero.hayUnaLetraEnPos(fila,derecha)){
+            Letra letraDerecha = _tablero.letraEnPos(fila,derecha);
             res.push_back(letraDerecha);
         }else{
             if(i == fichas.size()){
@@ -513,7 +497,7 @@ Palabra principalHorizontal(const Tablero &tablero, const vector<Ficha> &fichas)
                     res.push_back(LetraNueva);
                     i++;
                 }else{
-                    res = Palabra();
+                    res = Repositorio();
                     esContigua = false;
                 }
             }
@@ -524,8 +508,8 @@ Palabra principalHorizontal(const Tablero &tablero, const vector<Ficha> &fichas)
 }
 
 
-Palabra principalVertical(const Tablero &tablero, const vector<Ficha> &fichas) {
-    Palabra res;
+Repositorio Juego::principalVertical(const Tablero &tablero, const vector<Ficha> &fichas) {
+    Repositorio res;
     res.push_back(get<2>(fichas[0]));
     Nat fila = get<0>(fichas[0]);
     Nat columna = get<1>(fichas[0]);
@@ -534,14 +518,14 @@ Palabra principalVertical(const Tablero &tablero, const vector<Ficha> &fichas) {
     int i = 1;
     bool esContigua = true;
     bool termino = false;
-    while( 0 <= arriba && tablero.hayUnaLetraEnPos(arriba,columna)){
-        Letra letraArriba = tablero.letraEnPos(arriba,columna);
+    while( 0 <= arriba && _tablero.hayUnaLetraEnPos(arriba,columna)){
+        Letra letraArriba = _tablero.letraEnPos(arriba,columna);
         res.push_front(letraArriba);
         arriba--;
     }
-    while(abajo < tablero.tamanio() && not termino && esContigua){
-        if(tablero.hayUnaLetraEnPos(abajo,columna)){
-            Letra letraAbajo = tablero.letraEnPos(abajo,columna);
+    while(abajo < _tablero.tamanio() && not termino && esContigua){
+        if(_tablero.hayUnaLetraEnPos(abajo,columna)){
+            Letra letraAbajo = _tablero.letraEnPos(abajo,columna);
             res.push_back(letraAbajo);
         }else{
             if(i == fichas.size()){
@@ -552,7 +536,7 @@ Palabra principalVertical(const Tablero &tablero, const vector<Ficha> &fichas) {
                     res.push_back(LetraNueva);
                     i++;
                 }else{
-                    res = Palabra();
+                    res = Repositorio();
                     esContigua = false;
                 }
             }
@@ -561,4 +545,5 @@ Palabra principalVertical(const Tablero &tablero, const vector<Ficha> &fichas) {
     }
     return res;
 }
+
 

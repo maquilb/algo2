@@ -4,7 +4,8 @@
 #include <queue>
 #include "Tipos.h"
 #include "Variante.h"
-#include "Tablero.hpp"
+#include "Tablero.h"
+
 
 
 class Juego {
@@ -64,7 +65,7 @@ public:
      *
      * Complejidad: O(1)
      */
-    const Tablero& posDeTablero(Nat i, Nat j);
+    const tuple<bool, Letra, Nat> posDeTablero(Nat i, Nat j);
 
     /**
      * Retorna el jugador a quien le toca jugar
@@ -141,7 +142,7 @@ private:
             return res;
         }
     };
-    const Variante& _variante;
+    Variante _variante;
     Repositorio _repositorio;
     Tablero _tablero;
     vector<Jugador> _jugadores;
@@ -170,6 +171,35 @@ private:
 
     Nat  calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus);
 
+    list<Repositorio> PalabrasTransversales(Tablero tablero, const Ocurrencia &set, bool sentido);
+
+    bool tieneLasFichas(vector<Nat> &vector, const Ocurrencia &set);
+
+    void SumarAparicion(vector<tuple<Letra, Nat>> apariciones, Letra l);
+
+    bool ocurrenciaSinPosicionesRepetidas(const Ocurrencia &set);
+
+    bool DistanciaMayorAlongMax(const Ocurrencia &o, bool sentido, Nat largoMax);
+
+    Nat distanciaEntreFichas(Ficha min, Ficha max, bool sentido);
+
+    Ficha masChico(Ficha ficha1, Ficha ficha2, bool sentido);
+
+    Ficha masGrande(Ficha ficha1, Ficha ficha2, bool sentido);
+
+    Repositorio principalHorizontal(const Tablero &tablero, const vector<Ficha> &vector1);
+
+    Repositorio principalVertical(const Tablero &tablero, const vector<Ficha> &vector1);
+
+    Repositorio palabraTransversalVertical(const Tablero &tab, const Ficha &f);
+
+    Repositorio palabraTransversalHorizontal(const Tablero& tab, const Ficha &f);
+
+    vector<Ficha> ocurrenciaAVector(const Ocurrencia &o);
+
+    void ordenarVectorDeFichas(vector<Ficha> vect_fichas, bool sentido);
+
+    Repositorio FormarPalabraPrincipal(const Tablero &tab, const Ocurrencia &o, bool sentido);
 };
 
 

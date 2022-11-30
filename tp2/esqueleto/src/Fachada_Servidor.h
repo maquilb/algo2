@@ -19,7 +19,7 @@ public:
         Nat cantJugadores,
         const Fachada_Variante& variante,
         const Repositorio& r
-    ):  _servidor(cantJugadores, variante, r){};
+    ):  _servidor(cantJugadores, variante._variante, r){};
 
     /**
      * Conecta un cliente al servidor y retorna su id de cliente
@@ -27,7 +27,7 @@ public:
      * Complejidad: O(1)
      */
     IdCliente conectarCliente(){
-        IdCliente res = _servidor.conectados();
+        IdCliente res = _servidor.jugadoresConectados();
         _servidor.conectarCliente();
         return res;
     };
@@ -49,7 +49,7 @@ public:
      * Complejidad: O(1)
      */
     Nat jugadoresEsperados(){
-        return _servidor.esperados();
+        return _servidor.jugadoresEsperados();
     };
 
     /**
@@ -58,7 +58,7 @@ public:
      * Complejidad: O(1)
      */
     Nat jugadoresConectados(){
-        return _servidor.conectados();
+        return _servidor.jugadoresConectados();
     };
 
     /**
@@ -69,7 +69,7 @@ public:
      *   y F es la cantidad de fichas por jugador de la variante.
      */
     std::list<Notificacion> notificaciones(IdCliente id){
-        return _servidor.consultar(id);
+        return _servidor.notificaciones(id);
     };
 
 private:

@@ -86,7 +86,7 @@ private:
 
     void enviarNotiTodos(Notificacion notificacion);
 
-    void enviarNotiPers(Notificacion notificacion);
+    void enviarNotiPers(Nat i, Notificacion notificacion);
 
     std::list<Notificacion> ordenarNotificaciones(IdCliente id);
 

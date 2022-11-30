@@ -3,7 +3,7 @@
 Servidor::Servidor(Nat cantJugadores, const Variante &variante, const Repositorio &r) : _cantJugadoresConectados(0), _cantJugadoresEsperados(cantJugadores), _notificacionesPersonales(cantJugadores), _cantVistosNotificacionesParaTodos(cantJugadores), _notificacionesParaTodos(), _cantDeNotificaciones(0), _juego(cantJugadores, variante, r) {}
 
 void Servidor::conectarCliente() {
-    enviarNotiPers(Notificacion::nuevaIdCliente(_cantJugadoresConectados));
+    enviarNotiPers(_cantJugadoresConectados, Notificacion::nuevaIdCliente(_cantJugadoresConectados));
     _cantJugadoresConectados ++;
     if (_cantJugadoresConectados == _cantJugadoresEsperados){
         Nat tamTablero = _juego.variante().tamanoTablero();
@@ -16,7 +16,7 @@ void Servidor::conectarCliente() {
 }
 
 void Servidor::recibirMensaje(IdCliente id, const Ocurrencia &o) {
-    bool esValida = ((empezoJuego) && (id == _juego.turno));
+    bool esValida = ((empezoJuego()) && (id == _juego.turno()));
     if(esValida){
         bool jugValida = _juego.jugadaValida(o);
 
@@ -28,10 +28,10 @@ void Servidor::recibirMensaje(IdCliente id, const Ocurrencia &o) {
             enviarNotiTodos(Notificacion::nuevaUbicar(id,o));
             Nat puntajePostJugada = _juego.puntaje(id);
             enviarNotiTodos(Notificacion::nuevaSumaPuntos(id, puntajePostJugada - puntajePrevio));
-            enviarNotiTodos(Notificacion::nuevaTurnoDe(_juego.turno));
-            enviarNotiPers(Notificacion::nuevaReponer(fichasRepuestas(id, fichasAnteriores, fichasPostJugada)))
-        }else {
-            enviarNotiPers(Notificacion::nuevaMal());
+            enviarNotiTodos(Notificacion::nuevaTurnoDe(_juego.turno()));
+            enviarNotiPers(id, Notificacion::nuevaReponer(fichasRepuestas(id, fichasAnteriores, fichasPostJugada)));
+        } else {
+            enviarNotiPers(id, Notificacion::nuevaMal());
         }
     }
 }
@@ -62,18 +62,18 @@ bool Servidor::empezoJuego() {
 }
 
 void Servidor::enviarNotiTodos(Notificacion notificacion) {
-    tuple<Notificacion, Nat> noti;
-    get<0>(noti) = notificacion;
-    get<1>(noti) = _cantDeNotificaciones;
+    Notificacion notif = notificacion;
+    Nat cant = _cantDeNotificaciones;
+    tuple<Notificacion, Nat> noti = make_tuple(notif, cant);
     _notificacionesParaTodos.push_back(noti);
     _cantDeNotificaciones++;
 }
 
-void Servidor::enviarNotiPers(Notificacion notificacion) {
-    tuple<Notificacion, Nat> noti;
-    get<0>(noti) = notificacion;
-    get<1>(noti) = _cantDeNotificaciones;
-    _notificacionesPersonales[_cantJugadoresConectados-1].push(noti);
+void Servidor::enviarNotiPers(Nat i, Notificacion notificacion) {
+    Notificacion notif = notificacion;
+    Nat cant = _cantDeNotificaciones;
+    tuple<Notificacion, Nat> noti = make_tuple(notif, cant);
+    _notificacionesPersonales[i].push(noti);
     _cantDeNotificaciones++;
 }
 
