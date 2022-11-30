@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto
+CMAKE_SOURCE_DIR = C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -166,6 +166,30 @@ correrValgrind: cmake_check_build_system
 correrValgrind/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\correrValgrind.dir\build.make CMakeFiles/correrValgrind.dir/build
 .PHONY : correrValgrind/fast
+
+src/Conjunto_Trie.obj: src/Conjunto_Trie.cpp.obj
+.PHONY : src/Conjunto_Trie.obj
+
+# target to build an object file
+src/Conjunto_Trie.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\correrTests.dir\build.make CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj
+.PHONY : src/Conjunto_Trie.cpp.obj
+
+src/Conjunto_Trie.i: src/Conjunto_Trie.cpp.i
+.PHONY : src/Conjunto_Trie.i
+
+# target to preprocess a source file
+src/Conjunto_Trie.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\correrTests.dir\build.make CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.i
+.PHONY : src/Conjunto_Trie.cpp.i
+
+src/Conjunto_Trie.s: src/Conjunto_Trie.cpp.s
+.PHONY : src/Conjunto_Trie.s
+
+# target to generate assembly for a file
+src/Conjunto_Trie.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\correrTests.dir\build.make CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.s
+.PHONY : src/Conjunto_Trie.cpp.s
 
 src/Juego.obj: src/Juego.cpp.obj
 .PHONY : src/Juego.obj
@@ -262,30 +286,6 @@ src/Servidor.s: src/Servidor.cpp.s
 src/Servidor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\correrTests.dir\build.make CMakeFiles/correrTests.dir/src/Servidor.cpp.s
 .PHONY : src/Servidor.cpp.s
-
-src/Tablero.obj: src/Tablero.cpp.obj
-.PHONY : src/Tablero.obj
-
-# target to build an object file
-src/Tablero.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\correrTests.dir\build.make CMakeFiles/correrTests.dir/src/Tablero.cpp.obj
-.PHONY : src/Tablero.cpp.obj
-
-src/Tablero.i: src/Tablero.cpp.i
-.PHONY : src/Tablero.i
-
-# target to preprocess a source file
-src/Tablero.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\correrTests.dir\build.make CMakeFiles/correrTests.dir/src/Tablero.cpp.i
-.PHONY : src/Tablero.cpp.i
-
-src/Tablero.s: src/Tablero.cpp.s
-.PHONY : src/Tablero.s
-
-# target to generate assembly for a file
-src/Tablero.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\correrTests.dir\build.make CMakeFiles/correrTests.dir/src/Tablero.cpp.s
-.PHONY : src/Tablero.cpp.s
 
 src/Variante.obj: src/Variante.cpp.obj
 .PHONY : src/Variante.obj
@@ -611,6 +611,9 @@ help:
 	@echo ... correrTests
 	@echo ... gtest
 	@echo ... gtest_main
+	@echo ... src/Conjunto_Trie.obj
+	@echo ... src/Conjunto_Trie.i
+	@echo ... src/Conjunto_Trie.s
 	@echo ... src/Juego.obj
 	@echo ... src/Juego.i
 	@echo ... src/Juego.s
@@ -623,9 +626,6 @@ help:
 	@echo ... src/Servidor.obj
 	@echo ... src/Servidor.i
 	@echo ... src/Servidor.s
-	@echo ... src/Tablero.obj
-	@echo ... src/Tablero.i
-	@echo ... src/Tablero.s
 	@echo ... src/Variante.obj
 	@echo ... src/Variante.i
 	@echo ... src/Variante.s

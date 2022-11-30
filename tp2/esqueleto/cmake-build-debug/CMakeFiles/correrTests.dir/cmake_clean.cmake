@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj"
+  "CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj.d"
   "CMakeFiles/correrTests.dir/src/Juego.cpp.obj"
   "CMakeFiles/correrTests.dir/src/Juego.cpp.obj.d"
   "CMakeFiles/correrTests.dir/src/Letra.cpp.obj"
@@ -7,8 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj.d"
   "CMakeFiles/correrTests.dir/src/Servidor.cpp.obj"
   "CMakeFiles/correrTests.dir/src/Servidor.cpp.obj.d"
-  "CMakeFiles/correrTests.dir/src/Tablero.cpp.obj"
-  "CMakeFiles/correrTests.dir/src/Tablero.cpp.obj.d"
   "CMakeFiles/correrTests.dir/src/Variante.cpp.obj"
   "CMakeFiles/correrTests.dir/src/Variante.cpp.obj.d"
   "CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj"

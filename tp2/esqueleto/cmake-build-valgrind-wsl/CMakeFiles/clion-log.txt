@@ -1,0 +1,4 @@
+C:\WINDOWS\system32\wsl.exe --distribution Debian --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-valgrind-wsl && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G 'CodeBlocks - Unix Makefiles' -S /mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto -B /mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-valgrind-wsl"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/fmlopez/Documents/ferzfolder/estudio/materias/DC/AED2/tp2/algo2-2022c2-grupal/tp2/esqueleto/cmake-build-valgrind-wsl

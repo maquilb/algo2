@@ -4,7 +4,7 @@
 #include <queue>
 #include "Tipos.h"
 #include "Variante.h"
-#include "Tablero.h"
+#include "Tablero.hpp"
 
 
 class Juego {

@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2\bin\cmake\win\bin\cmake.exe" -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto
+CMAKE_SOURCE_DIR = C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/correrTests.dir/depend.make
@@ -68,237 +68,237 @@ include CMakeFiles/correrTests.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/correrTests.dir/flags.make
 
+CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj: CMakeFiles/correrTests.dir/flags.make
+CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj: ../src/Conjunto_Trie.cpp
+CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj -MF CMakeFiles\correrTests.dir\src\Conjunto_Trie.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Conjunto_Trie.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Conjunto_Trie.cpp
+
+CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Conjunto_Trie.cpp > CMakeFiles\correrTests.dir\src\Conjunto_Trie.cpp.i
+
+CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Conjunto_Trie.cpp -o CMakeFiles\correrTests.dir\src\Conjunto_Trie.cpp.s
+
 CMakeFiles/correrTests.dir/src/Juego.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/src/Juego.cpp.obj: ../src/Juego.cpp
 CMakeFiles/correrTests.dir/src/Juego.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/correrTests.dir/src/Juego.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Juego.cpp.obj -MF CMakeFiles\correrTests.dir\src\Juego.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Juego.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Juego.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/correrTests.dir/src/Juego.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Juego.cpp.obj -MF CMakeFiles\correrTests.dir\src\Juego.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Juego.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Juego.cpp
 
 CMakeFiles/correrTests.dir/src/Juego.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/src/Juego.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Juego.cpp > CMakeFiles\correrTests.dir\src\Juego.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Juego.cpp > CMakeFiles\correrTests.dir\src\Juego.cpp.i
 
 CMakeFiles/correrTests.dir/src/Juego.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/src/Juego.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Juego.cpp -o CMakeFiles\correrTests.dir\src\Juego.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Juego.cpp -o CMakeFiles\correrTests.dir\src\Juego.cpp.s
 
 CMakeFiles/correrTests.dir/src/Letra.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/src/Letra.cpp.obj: ../src/Letra.cpp
 CMakeFiles/correrTests.dir/src/Letra.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/correrTests.dir/src/Letra.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Letra.cpp.obj -MF CMakeFiles\correrTests.dir\src\Letra.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Letra.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Letra.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/correrTests.dir/src/Letra.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Letra.cpp.obj -MF CMakeFiles\correrTests.dir\src\Letra.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Letra.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Letra.cpp
 
 CMakeFiles/correrTests.dir/src/Letra.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/src/Letra.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Letra.cpp > CMakeFiles\correrTests.dir\src\Letra.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Letra.cpp > CMakeFiles\correrTests.dir\src\Letra.cpp.i
 
 CMakeFiles/correrTests.dir/src/Letra.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/src/Letra.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Letra.cpp -o CMakeFiles\correrTests.dir\src\Letra.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Letra.cpp -o CMakeFiles\correrTests.dir\src\Letra.cpp.s
 
 CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj: ../src/Notificacion.cpp
 CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj -MF CMakeFiles\correrTests.dir\src\Notificacion.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Notificacion.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Notificacion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj -MF CMakeFiles\correrTests.dir\src\Notificacion.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Notificacion.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Notificacion.cpp
 
 CMakeFiles/correrTests.dir/src/Notificacion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/src/Notificacion.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Notificacion.cpp > CMakeFiles\correrTests.dir\src\Notificacion.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Notificacion.cpp > CMakeFiles\correrTests.dir\src\Notificacion.cpp.i
 
 CMakeFiles/correrTests.dir/src/Notificacion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/src/Notificacion.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Notificacion.cpp -o CMakeFiles\correrTests.dir\src\Notificacion.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Notificacion.cpp -o CMakeFiles\correrTests.dir\src\Notificacion.cpp.s
 
 CMakeFiles/correrTests.dir/src/Servidor.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/src/Servidor.cpp.obj: ../src/Servidor.cpp
 CMakeFiles/correrTests.dir/src/Servidor.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/correrTests.dir/src/Servidor.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Servidor.cpp.obj -MF CMakeFiles\correrTests.dir\src\Servidor.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Servidor.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Servidor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/correrTests.dir/src/Servidor.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Servidor.cpp.obj -MF CMakeFiles\correrTests.dir\src\Servidor.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Servidor.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Servidor.cpp
 
 CMakeFiles/correrTests.dir/src/Servidor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/src/Servidor.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Servidor.cpp > CMakeFiles\correrTests.dir\src\Servidor.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Servidor.cpp > CMakeFiles\correrTests.dir\src\Servidor.cpp.i
 
 CMakeFiles/correrTests.dir/src/Servidor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/src/Servidor.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Servidor.cpp -o CMakeFiles\correrTests.dir\src\Servidor.cpp.s
-
-CMakeFiles/correrTests.dir/src/Tablero.cpp.obj: CMakeFiles/correrTests.dir/flags.make
-CMakeFiles/correrTests.dir/src/Tablero.cpp.obj: ../src/Tablero.cpp
-CMakeFiles/correrTests.dir/src/Tablero.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/correrTests.dir/src/Tablero.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Tablero.cpp.obj -MF CMakeFiles\correrTests.dir\src\Tablero.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Tablero.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Tablero.cpp
-
-CMakeFiles/correrTests.dir/src/Tablero.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/src/Tablero.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Tablero.cpp > CMakeFiles\correrTests.dir\src\Tablero.cpp.i
-
-CMakeFiles/correrTests.dir/src/Tablero.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/src/Tablero.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Tablero.cpp -o CMakeFiles\correrTests.dir\src\Tablero.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Servidor.cpp -o CMakeFiles\correrTests.dir\src\Servidor.cpp.s
 
 CMakeFiles/correrTests.dir/src/Variante.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/src/Variante.cpp.obj: ../src/Variante.cpp
 CMakeFiles/correrTests.dir/src/Variante.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/correrTests.dir/src/Variante.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Variante.cpp.obj -MF CMakeFiles\correrTests.dir\src\Variante.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Variante.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Variante.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/correrTests.dir/src/Variante.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/src/Variante.cpp.obj -MF CMakeFiles\correrTests.dir\src\Variante.cpp.obj.d -o CMakeFiles\correrTests.dir\src\Variante.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Variante.cpp
 
 CMakeFiles/correrTests.dir/src/Variante.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/src/Variante.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Variante.cpp > CMakeFiles\correrTests.dir\src\Variante.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Variante.cpp > CMakeFiles\correrTests.dir\src\Variante.cpp.i
 
 CMakeFiles/correrTests.dir/src/Variante.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/src/Variante.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\src\Variante.cpp -o CMakeFiles\correrTests.dir\src\Variante.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\src\Variante.cpp -o CMakeFiles\correrTests.dir\src\Variante.cpp.s
 
 CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj: ../tests/utils/NotificacionesUtils.cpp
 CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj -MF CMakeFiles\correrTests.dir\tests\utils\NotificacionesUtils.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\utils\NotificacionesUtils.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\NotificacionesUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj -MF CMakeFiles\correrTests.dir\tests\utils\NotificacionesUtils.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\utils\NotificacionesUtils.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\NotificacionesUtils.cpp
 
 CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\NotificacionesUtils.cpp > CMakeFiles\correrTests.dir\tests\utils\NotificacionesUtils.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\NotificacionesUtils.cpp > CMakeFiles\correrTests.dir\tests\utils\NotificacionesUtils.cpp.i
 
 CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\NotificacionesUtils.cpp -o CMakeFiles\correrTests.dir\tests\utils\NotificacionesUtils.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\NotificacionesUtils.cpp -o CMakeFiles\correrTests.dir\tests\utils\NotificacionesUtils.cpp.s
 
 CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj: ../tests/utils/PalabrasComunes.cpp
 CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj -MF CMakeFiles\correrTests.dir\tests\utils\PalabrasComunes.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\utils\PalabrasComunes.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\PalabrasComunes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj -MF CMakeFiles\correrTests.dir\tests\utils\PalabrasComunes.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\utils\PalabrasComunes.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\PalabrasComunes.cpp
 
 CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\PalabrasComunes.cpp > CMakeFiles\correrTests.dir\tests\utils\PalabrasComunes.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\PalabrasComunes.cpp > CMakeFiles\correrTests.dir\tests\utils\PalabrasComunes.cpp.i
 
 CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\PalabrasComunes.cpp -o CMakeFiles\correrTests.dir\tests\utils\PalabrasComunes.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\utils\PalabrasComunes.cpp -o CMakeFiles\correrTests.dir\tests\utils\PalabrasComunes.cpp.s
 
 CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj: ../tests/juego-empezado-tests.cpp
 CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\juego-empezado-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\juego-empezado-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-empezado-tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\juego-empezado-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\juego-empezado-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-empezado-tests.cpp
 
 CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-empezado-tests.cpp > CMakeFiles\correrTests.dir\tests\juego-empezado-tests.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-empezado-tests.cpp > CMakeFiles\correrTests.dir\tests\juego-empezado-tests.cpp.i
 
 CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/juego-empezado-tests.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-empezado-tests.cpp -o CMakeFiles\correrTests.dir\tests\juego-empezado-tests.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-empezado-tests.cpp -o CMakeFiles\correrTests.dir\tests\juego-empezado-tests.cpp.s
 
 CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.obj: ../tests/juego-grande-tests.cpp
 CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\juego-grande-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\juego-grande-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-grande-tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\juego-grande-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\juego-grande-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-grande-tests.cpp
 
 CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-grande-tests.cpp > CMakeFiles\correrTests.dir\tests\juego-grande-tests.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-grande-tests.cpp > CMakeFiles\correrTests.dir\tests\juego-grande-tests.cpp.i
 
 CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/juego-grande-tests.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-grande-tests.cpp -o CMakeFiles\correrTests.dir\tests\juego-grande-tests.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-grande-tests.cpp -o CMakeFiles\correrTests.dir\tests\juego-grande-tests.cpp.s
 
 CMakeFiles/correrTests.dir/tests/juego-tests.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/juego-tests.cpp.obj: ../tests/juego-tests.cpp
 CMakeFiles/correrTests.dir/tests/juego-tests.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/correrTests.dir/tests/juego-tests.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/juego-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\juego-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\juego-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/correrTests.dir/tests/juego-tests.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/juego-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\juego-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\juego-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-tests.cpp
 
 CMakeFiles/correrTests.dir/tests/juego-tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/juego-tests.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-tests.cpp > CMakeFiles\correrTests.dir\tests\juego-tests.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-tests.cpp > CMakeFiles\correrTests.dir\tests\juego-tests.cpp.i
 
 CMakeFiles/correrTests.dir/tests/juego-tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/juego-tests.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-tests.cpp -o CMakeFiles\correrTests.dir\tests\juego-tests.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-tests.cpp -o CMakeFiles\correrTests.dir\tests\juego-tests.cpp.s
 
 CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.obj: ../tests/juego-trivial-tests.cpp
 CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\juego-trivial-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\juego-trivial-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-trivial-tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\juego-trivial-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\juego-trivial-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-trivial-tests.cpp
 
 CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-trivial-tests.cpp > CMakeFiles\correrTests.dir\tests\juego-trivial-tests.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-trivial-tests.cpp > CMakeFiles\correrTests.dir\tests\juego-trivial-tests.cpp.i
 
 CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/juego-trivial-tests.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-trivial-tests.cpp -o CMakeFiles\correrTests.dir\tests\juego-trivial-tests.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\juego-trivial-tests.cpp -o CMakeFiles\correrTests.dir\tests\juego-trivial-tests.cpp.s
 
 CMakeFiles/correrTests.dir/tests/letra-tests.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/letra-tests.cpp.obj: ../tests/letra-tests.cpp
 CMakeFiles/correrTests.dir/tests/letra-tests.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/correrTests.dir/tests/letra-tests.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/letra-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\letra-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\letra-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\letra-tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/correrTests.dir/tests/letra-tests.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/letra-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\letra-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\letra-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\letra-tests.cpp
 
 CMakeFiles/correrTests.dir/tests/letra-tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/letra-tests.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\letra-tests.cpp > CMakeFiles\correrTests.dir\tests\letra-tests.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\letra-tests.cpp > CMakeFiles\correrTests.dir\tests\letra-tests.cpp.i
 
 CMakeFiles/correrTests.dir/tests/letra-tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/letra-tests.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\letra-tests.cpp -o CMakeFiles\correrTests.dir\tests\letra-tests.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\letra-tests.cpp -o CMakeFiles\correrTests.dir\tests\letra-tests.cpp.s
 
 CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.obj: ../tests/notificacion-tests.cpp
 CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\notificacion-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\notificacion-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\notificacion-tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\notificacion-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\notificacion-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\notificacion-tests.cpp
 
 CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\notificacion-tests.cpp > CMakeFiles\correrTests.dir\tests\notificacion-tests.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\notificacion-tests.cpp > CMakeFiles\correrTests.dir\tests\notificacion-tests.cpp.i
 
 CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/notificacion-tests.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\notificacion-tests.cpp -o CMakeFiles\correrTests.dir\tests\notificacion-tests.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\notificacion-tests.cpp -o CMakeFiles\correrTests.dir\tests\notificacion-tests.cpp.s
 
 CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.obj: ../tests/servidor-tests.cpp
 CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\servidor-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\servidor-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\servidor-tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\servidor-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\servidor-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\servidor-tests.cpp
 
 CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\servidor-tests.cpp > CMakeFiles\correrTests.dir\tests\servidor-tests.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\servidor-tests.cpp > CMakeFiles\correrTests.dir\tests\servidor-tests.cpp.i
 
 CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/servidor-tests.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\servidor-tests.cpp -o CMakeFiles\correrTests.dir\tests\servidor-tests.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\servidor-tests.cpp -o CMakeFiles\correrTests.dir\tests\servidor-tests.cpp.s
 
 CMakeFiles/correrTests.dir/tests/variante-tests.cpp.obj: CMakeFiles/correrTests.dir/flags.make
 CMakeFiles/correrTests.dir/tests/variante-tests.cpp.obj: ../tests/variante-tests.cpp
 CMakeFiles/correrTests.dir/tests/variante-tests.cpp.obj: CMakeFiles/correrTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/correrTests.dir/tests/variante-tests.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/variante-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\variante-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\variante-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\variante-tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/correrTests.dir/tests/variante-tests.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/correrTests.dir/tests/variante-tests.cpp.obj -MF CMakeFiles\correrTests.dir\tests\variante-tests.cpp.obj.d -o CMakeFiles\correrTests.dir\tests\variante-tests.cpp.obj -c C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\variante-tests.cpp
 
 CMakeFiles/correrTests.dir/tests/variante-tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/tests/variante-tests.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\variante-tests.cpp > CMakeFiles\correrTests.dir\tests\variante-tests.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\variante-tests.cpp > CMakeFiles\correrTests.dir\tests\variante-tests.cpp.i
 
 CMakeFiles/correrTests.dir/tests/variante-tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/tests/variante-tests.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\tests\variante-tests.cpp -o CMakeFiles\correrTests.dir\tests\variante-tests.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\tests\variante-tests.cpp -o CMakeFiles\correrTests.dir\tests\variante-tests.cpp.s
 
 # Object files for target correrTests
 correrTests_OBJECTS = \
+"CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj" \
 "CMakeFiles/correrTests.dir/src/Juego.cpp.obj" \
 "CMakeFiles/correrTests.dir/src/Letra.cpp.obj" \
 "CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj" \
 "CMakeFiles/correrTests.dir/src/Servidor.cpp.obj" \
-"CMakeFiles/correrTests.dir/src/Tablero.cpp.obj" \
 "CMakeFiles/correrTests.dir/src/Variante.cpp.obj" \
 "CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj" \
 "CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj" \
@@ -314,11 +314,11 @@ correrTests_OBJECTS = \
 # External object files for target correrTests
 correrTests_EXTERNAL_OBJECTS =
 
+correrTests.exe: CMakeFiles/correrTests.dir/src/Conjunto_Trie.cpp.obj
 correrTests.exe: CMakeFiles/correrTests.dir/src/Juego.cpp.obj
 correrTests.exe: CMakeFiles/correrTests.dir/src/Letra.cpp.obj
 correrTests.exe: CMakeFiles/correrTests.dir/src/Notificacion.cpp.obj
 correrTests.exe: CMakeFiles/correrTests.dir/src/Servidor.cpp.obj
-correrTests.exe: CMakeFiles/correrTests.dir/src/Tablero.cpp.obj
 correrTests.exe: CMakeFiles/correrTests.dir/src/Variante.cpp.obj
 correrTests.exe: CMakeFiles/correrTests.dir/tests/utils/NotificacionesUtils.cpp.obj
 correrTests.exe: CMakeFiles/correrTests.dir/tests/utils/PalabrasComunes.cpp.obj
@@ -336,7 +336,7 @@ correrTests.exe: libgtest_main.a
 correrTests.exe: CMakeFiles/correrTests.dir/linklibs.rsp
 correrTests.exe: CMakeFiles/correrTests.dir/objects1.rsp
 correrTests.exe: CMakeFiles/correrTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable correrTests.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable correrTests.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\correrTests.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -348,6 +348,6 @@ CMakeFiles/correrTests.dir/clean:
 .PHONY : CMakeFiles/correrTests.dir/clean
 
 CMakeFiles/correrTests.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\TP1\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles\correrTests.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug C:\Users\fmlopez\Documents\ferzfolder\estudio\materias\DC\AED2\tp2\algo2-2022c2-grupal\tp2\esqueleto\cmake-build-debug\CMakeFiles\correrTests.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/correrTests.dir/depend
 
