@@ -1,11 +1,11 @@
 
 #include "Variante.h"
 
-Variante::Variante(Nat tamanoTab, Nat cantFichas, const map<Letra, Nat> &puntajes, const set<Repositorio> &palabrasLegitimas):
-_tamano(tamanoTab),
-_cantidadDeFichas(cantFichas),
-_valorLetras(puntajes.size()),
-_palabrasPermitidas(conjunto_Trie()){
+Variante::Variante(Nat tamanoTab, Nat cantFichas, const map<Letra, Nat> &puntajes, const set<Repositorio> &palabrasLegitimas){
+    _tamano = tamanoTab;
+    _cantidadDeFichas = cantFichas;
+    _valorLetras = vector<Nat>(TAMANIO_ALFABETO,0);
+    _palabrasPermitidas = conjunto_Trie();
     // Asignamos el valor de cada letra del alfabeto
     auto it1 = puntajes.begin();
     while (it1 != puntajes.end()){
@@ -14,7 +14,7 @@ _palabrasPermitidas(conjunto_Trie()){
         _valorLetras[ord(letra)]= puntos;
         it1++;
     }
-    //Creamos el diccionario Trie
+    //Creamos el conjunto Trie
     auto it2 = palabrasLegitimas.begin();
     while (it2 != palabrasLegitimas.end()){
         Repositorio pal = *it2;

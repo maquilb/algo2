@@ -51,8 +51,8 @@ public:
 
 private:
 
-    const Nat _tamano;
-    const Nat _cantidadDeFichas;
+    Nat _tamano;
+    Nat _cantidadDeFichas;
     vector<Nat> _valorLetras;
     conjunto_Trie _palabrasPermitidas;
 };
