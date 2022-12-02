@@ -28,8 +28,8 @@ private:
     struct Nodo{
         vector<Nodo*> _siguientes;
         bool _palabraDefinida;
-        Nodo() : _siguientes(TAMANIO_ALFABETO, nullptr) {
-            _palabraDefinida = false;
+        Nodo() : _palabraDefinida(false), _siguientes(TAMANIO_ALFABETO, nullptr) {
+            ;
         }
     };
 

@@ -30,6 +30,7 @@ set<Repositorio> Fachada_Variante::setvectorToList(const set<Palabra> palabra) c
             pal_aux.push_back(pal[i]);
         }
         res.insert(pal_aux);
+        ++it;
     }
     return res;
 }

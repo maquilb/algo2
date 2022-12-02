@@ -1,6 +1,8 @@
 #include "Conjunto_Trie.h"
 
-conjunto_Trie::conjunto_Trie() : _raiz(new Nodo), _longitudmax(0) {}
+conjunto_Trie::conjunto_Trie() : _raiz(nullptr), _longitudmax(0) {
+    _raiz = new Nodo();
+}
 
 conjunto_Trie::~conjunto_Trie() {
     eliminar(_raiz);
@@ -21,9 +23,9 @@ void conjunto_Trie::agregar(Repositorio &palabra) {
         _longitudmax = longitud;
     }
     Nodo* actual = _raiz;
-    auto it = palabra.front();
-    while(it != palabra.back()){
-        Nat numLetra = ord(it);
+    auto it = palabra.begin();
+    while(it != palabra.end()){
+        Nat numLetra = ord(*it);
         if (actual->_siguientes[numLetra] == nullptr){
             actual->_siguientes[numLetra] = new Nodo;
         }
