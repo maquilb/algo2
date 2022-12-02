@@ -13,7 +13,7 @@ void conjunto_Trie::eliminar(conjunto_Trie::Nodo* n) {
         for(int i = 0; i < TAMANIO_ALFABETO; i++){
             eliminar(n->_siguientes[i]);
         }
-        delete n;
+        //delete n;
     }
 }
 
