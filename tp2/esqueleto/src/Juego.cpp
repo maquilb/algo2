@@ -6,11 +6,12 @@ Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(v), _rep
 void Juego::ubicar(const Ocurrencia &o) {
     _tablero.ponerLetras(o, _cantidadDeTurnos);
     _cantidadDeTurnos ++;
-    _turnoDe ++;
+
     if (_turnoDe == _jugadores.size()){
         _turnoDe = 0;
     }
     _jugadores[_turnoDe]._ocurrenciasDelJugador.push(o);
+    _turnoDe ++;
     reponerFichas(o);
 }
 
@@ -91,8 +92,8 @@ Nat Juego::calcularPuntos(queue<Repositorio> &palabras){
     Nat res = 0;
     while(!palabras.empty()){
         Repositorio p = palabras.front();
-        auto it = p.front();
-        while(it != p.back()){
+        auto it = p.begin();
+        while(it != p.end()){
             Letra l = p.front();
             res += _variante.puntajeLetra(l);
             it++;
