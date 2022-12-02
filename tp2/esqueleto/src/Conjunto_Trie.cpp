@@ -52,9 +52,9 @@ bool conjunto_Trie::pertenece(const Repositorio& palabra) const {
     if (palabra.size() > _longitudmax){
         res = false;
     } else {
-        auto it = palabra.front();
-        while(it != palabra.back()){
-            Nat numLetra = ord(it);
+        auto it = palabra.begin();
+        while(it != palabra.end()){
+            Nat numLetra = ord(*it);
             if (actual->_siguientes[numLetra] == nullptr){
                 return false;
             }

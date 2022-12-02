@@ -5,8 +5,9 @@ Variante::Variante(Nat tamanoTab, Nat cantFichas, const map<Letra, Nat> &puntaje
 : _palabrasPermitidas(conjunto_Trie()){
     _tamano = tamanoTab;
     _cantidadDeFichas = cantFichas;
-    _valorLetras = vector<Nat>(TAMANIO_ALFABETO,0);
+    _valorLetras = vector<Nat>(TAMANIO_ALFABETO,1);
     // Asignamos el valor de cada letra del alfabeto
+
     auto it1 = puntajes.begin();
     while (it1 != puntajes.end()){
         Letra letra = it1->first;
