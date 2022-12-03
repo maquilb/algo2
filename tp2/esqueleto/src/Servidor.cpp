@@ -30,6 +30,8 @@ void Servidor::recibirMensaje(IdCliente id, const Ocurrencia &o) {
             enviarNotiTodos(Notificacion::nuevaSumaPuntos(id, puntajePostJugada - puntajePrevio));
             enviarNotiTodos(Notificacion::nuevaTurnoDe(_juego.turno()));
             enviarNotiPers(id, Notificacion::nuevaReponer(fichasRepuestas(id, fichasAnteriores, fichasPostJugada)));
+        } else {
+            enviarNotiPers(id, Notificacion::nuevaMal());
         }
     } else {
         enviarNotiPers(id, Notificacion::nuevaMal());
@@ -45,12 +47,13 @@ Nat Servidor::jugadoresConectados() {
 }
 
 std::list<Notificacion> Servidor::notificaciones(IdCliente id) {
-    return ordenarNotificaciones(id);
+    list<Notificacion> res = ordenarNotificaciones(id);
     queue<tuple<Notificacion, Nat>> notisPers{};
     //Puede ser que este paso no sea necesario, porque vacio la cola cuando llamo a la funcion colaAVector
     _notificacionesPersonales[id] = notisPers;
     Nat cant = _notificacionesParaTodos.size();
     _cantVistosNotificacionesParaTodos[id] +=cant;
+    return res;
 }
 
 const Juego &Servidor::juegoDelServidor() {
