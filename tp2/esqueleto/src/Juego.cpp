@@ -4,9 +4,9 @@
 Juego::Juego(Nat k, const Variante &v, Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(_variante.tamanoTablero())), _jugadores(k, Jugador(v, r)), _cantidadDeTurnos(0), _turnoDe(0) {
     for (int i = 0; i < _jugadores.size(); i++) {
         for(Nat j = 0; j<v.fichas(); j++){
-            Letra l  = r.front();
+            Letra l  = _repositorio.front();
             _jugadores[i]._fichasDelJugador[ord(l)]++;
-            r.pop_front();
+            _repositorio.pop_front();
         }
     }
 }
@@ -83,7 +83,7 @@ Nat Juego::cantFicha(IdCliente id, Letra l) {
     return _jugadores[id]._fichasDelJugador[ord(l)];
 }
 
-void Juego :: reponerFichas(const Ocurrencia o){
+void Juego :: reponerFichas(const Ocurrencia &o){
     auto it = o.begin();
     while (it != o.end()){
         tuple<Nat, Nat, Letra> ficha = *it;

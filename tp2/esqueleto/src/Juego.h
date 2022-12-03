@@ -144,7 +144,7 @@ private:
      * Definimos la funcion reponerFichas, que repone las fichas en la bolsa del jugador
      **/
 
-    void reponerFichas(const Ocurrencia o);
+    void reponerFichas(const Ocurrencia &o);
 
     Nat calcularPuntos(queue<Repositorio> &palabras);
 
