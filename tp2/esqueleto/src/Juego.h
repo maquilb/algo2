@@ -131,7 +131,6 @@ private:
         Nat _puntajeDelJugador;
         queue<Ocurrencia> _ocurrenciasDelJugador;
         Jugador(Variante v, Repositorio &r) : _fichasDelJugador(TAMANIO_ALFABETO), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
-        // por fines practicos es un tupla de 3 elemntos
     };
     Variante _variante;
     Repositorio _repositorio;

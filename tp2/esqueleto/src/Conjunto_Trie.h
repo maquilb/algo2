@@ -34,7 +34,7 @@ public:
     /* Longitud de la palabra mas larga */
     Nat lmax() const;
 
-    void agregarPalabras(set<Repositorio> &palabras);
+    void agregarPalabras(set<Repositorio> palabras);
 
 private:
     struct Nodo{

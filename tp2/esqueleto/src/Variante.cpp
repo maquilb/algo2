@@ -15,14 +15,7 @@ Variante::Variante(Nat tamanoTab, Nat cantFichas, const map<Letra, Nat> &puntaje
         _valorLetras[ord(letra)]= puntos;
         it1++;
     }
-    //Creamos el conjunto Trie
-    auto it2 = palabrasLegitimas.begin();
-    while (it2 != palabrasLegitimas.end()){
-        Repositorio pal = *it2;
-        _palabrasPermitidas.agregar(pal);
-        it2++;
-    }
-
+    _palabrasPermitidas.agregarPalabras(palabrasLegitimas);
 }
 
 Nat Variante::tamanoTablero() const {

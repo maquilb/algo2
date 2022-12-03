@@ -72,7 +72,7 @@ Nat conjunto_Trie::lmax() const {
     return _longitudmax;
 }
 
-void conjunto_Trie::agregarPalabras(set<Repositorio> &palabras) {
+void conjunto_Trie::agregarPalabras(set<Repositorio> palabras) {
     auto it = palabras.begin();
     while(it != palabras.end()){
         agregar(const_cast<Repositorio &>(*it));
@@ -90,5 +90,6 @@ conjunto_Trie &conjunto_Trie::operator=(const conjunto_Trie &d) {
     if(not d.esVacio()){
         copiar(this->_raiz->_siguientes, d._raiz->_siguientes);
     }
+    this->_longitudmax = d._longitudmax;
     return *this;
 }

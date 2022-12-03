@@ -28,8 +28,8 @@ void Servidor::recibirMensaje(IdCliente id, const Ocurrencia &o) {
             enviarNotiTodos(Notificacion::nuevaUbicar(id, o));
             Nat puntajePostJugada = _juego.puntaje(id);
             enviarNotiTodos(Notificacion::nuevaSumaPuntos(id, puntajePostJugada - puntajePrevio));
-            enviarNotiTodos(Notificacion::nuevaTurnoDe(_juego.turno()));
             enviarNotiPers(id, Notificacion::nuevaReponer(fichasRepuestas(id, fichasAnteriores, fichasPostJugada)));
+            enviarNotiTodos(Notificacion::nuevaTurnoDe(_juego.turno()));
         } else {
             enviarNotiPers(id, Notificacion::nuevaMal());
         }

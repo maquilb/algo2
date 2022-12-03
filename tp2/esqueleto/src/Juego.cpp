@@ -102,7 +102,7 @@ Nat Juego::calcularPuntos(queue<Repositorio> &palabras){
         Repositorio p = palabras.front();
         auto it = p.begin();
         while(it != p.end()){
-            Letra l = p.front();
+            Letra l = *it;
             res += _variante.puntajeLetra(l);
             it++;
         }
@@ -112,27 +112,26 @@ Nat Juego::calcularPuntos(queue<Repositorio> &palabras){
 }
 
 tuple<bool, bool> Juego::HorizontalOVertical(Ocurrencia o){
-    tuple<bool, bool> res;
-    bool horizontal = get<0>(res);
-    bool vertical = get<1>(res);
-    horizontal = true;
-    vertical = true;
+    // declaro tupla pra meter datos
+    tuple<bool, bool> res = make_tuple(true, true);
+
     if (o.size()==1) {
-        horizontal = false;
-        vertical = true;
+        get<0>(res) = false;
+        get<1>(res) = true;
+        // tamaño 1 -> ambos true porque?
     } else if (o.size()>1) {
         auto it = o.begin();
         Nat fila0 = get<0>(*it);
         Nat col0 = get<1>(*it);
         it++;
-        while(it != o.end() && (horizontal || vertical)){
+        while(it != o.end() && (get<0>(res) || get<1>(res))){
             Nat fila1 = get<0>(*it);
             Nat col1 = get<1>(*it);
-            if(horizontal){
-                horizontal = fila1 == fila0;
+            if(get<0>(res)){ //horizontal
+                get<0>(res) = fila1 == fila0;
             }
-            if (vertical){
-                vertical = col1 != col0;
+            if (get<1>(res)){ //vertical
+                get<1>(res) = col1 == col0;
             }
             fila0 = fila1;
             col0 = col1;
@@ -144,7 +143,7 @@ tuple<bool, bool> Juego::HorizontalOVertical(Ocurrencia o){
 
 Nat  Juego::calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus){
     Nat res = 0;
-    while(!ocus.empty()){
+    while(not ocus.empty()){
         Ocurrencia p = ocus.front();
         queue<Repositorio> palabras = palabrasFormadas(p);
         ocus.pop();
@@ -258,7 +257,7 @@ bool Juego::jugadaValida(const Ocurrencia& o) {
 
         if (res && not tieneLasFichas(fichasJugador, o)) res = false;
 
-        if (res && not _tablero.sonCeldasLibres(o)) res = false; // �porque me pone mal _tablero?
+        if (res && not _tablero.sonCeldasLibres(o)) res = false;
 
         bool esHorizontal = false;
         bool esVertical = false;
@@ -270,7 +269,7 @@ bool Juego::jugadaValida(const Ocurrencia& o) {
             if (not(esHorizontal or esVertical)) {
                 res = false;
             }
-            if (not(esVertical or esHorizontal) && o.size()==1){
+            if (not(esVertical or esHorizontal) && o.size()==1 && _tablero.sonCeldasLibres(o) && tieneLasFichas(fichasJugador, o)){
                 return true;
             }
         }
@@ -356,6 +355,7 @@ bool Juego::DistanciaMayorAlongMax(const Ocurrencia &o, bool sentido, Nat largoM
         max = masGrande(max, ficha0, sentido);
         distancia = distanciaEntreFichas(min,max,sentido);
         if(largoMax < distancia) res = true;
+        it++;
     }
     return res;
 }
@@ -446,6 +446,7 @@ vector<Ficha> Juego::ocurrenciaAVector(const Ocurrencia &o) {
     while( it != o.end()){
         Ficha fich = *it;
         res.push_back(fich);
+        it++;
     }
     return res;
 }
@@ -464,10 +465,10 @@ void Juego::ordenarVectorDeFichas(vector<Ficha> vect_fichas, bool sentido) {
                 vect_fichas[j] = vect_fichas[j+1];
                 vect_fichas[j+1] = temp;
                 swapped = true;
-                j++;
             }
+            j++;
         }
-        i++;
+        i--;
     }
 }
 
