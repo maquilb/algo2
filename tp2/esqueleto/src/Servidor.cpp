@@ -17,22 +17,22 @@ void Servidor::conectarCliente() {
 
 void Servidor::recibirMensaje(IdCliente id, const Ocurrencia &o) {
     bool esValida = ((empezoJuego()) && (id == _juego.turno()));
-    if(esValida){
+    if(esValida) {
         bool jugValida = _juego.jugadaValida(o);
 
-        if(jugValida){
+        if (jugValida) {
             vector<Nat> fichasAnteriores = _juego.fichasDeJugador(id);
             Nat puntajePrevio = _juego.puntaje(id);
             _juego.ubicar(o);
             const vector<Nat> fichasPostJugada = _juego.fichasDeJugador(id);
-            enviarNotiTodos(Notificacion::nuevaUbicar(id,o));
+            enviarNotiTodos(Notificacion::nuevaUbicar(id, o));
             Nat puntajePostJugada = _juego.puntaje(id);
             enviarNotiTodos(Notificacion::nuevaSumaPuntos(id, puntajePostJugada - puntajePrevio));
             enviarNotiTodos(Notificacion::nuevaTurnoDe(_juego.turno()));
             enviarNotiPers(id, Notificacion::nuevaReponer(fichasRepuestas(id, fichasAnteriores, fichasPostJugada)));
-        } else {
-            enviarNotiPers(id, Notificacion::nuevaMal());
         }
+    } else {
+        enviarNotiPers(id, Notificacion::nuevaMal());
     }
 }
 
@@ -130,8 +130,8 @@ vector<tuple<Notificacion, Nat>> Servidor::colaAVector(queue<tuple<Notificacion,
     return res;
 }
 
-void Servidor::Merge(list<Notificacion> res, vector<tuple<Notificacion, Nat>> notisPers,
-                     vector<tuple<Notificacion, Nat>> notisTodos) {
+void Servidor::Merge(list<Notificacion> &res, vector<tuple<Notificacion, Nat>> &notisPers,
+                     vector<tuple<Notificacion, Nat>> &notisTodos) {
     Nat iP = 0;
     Nat iT = 0;
     Nat tam = notisPers.size() + notisTodos.size();

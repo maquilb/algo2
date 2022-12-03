@@ -96,8 +96,7 @@ private:
 
     vector<tuple<Notificacion, Nat>> colaAVector(queue<tuple<Notificacion, Nat>> &queue);
 
-    void
-    Merge(list<Notificacion> res, vector<tuple<Notificacion, Nat>> notisPers, vector<tuple<Notificacion, Nat>> notisTodos);
+    void Merge(list<Notificacion> &res, vector<tuple<Notificacion, Nat>> &notisPers, vector<tuple<Notificacion, Nat>> &notisTodos);
 };
 
 #endif // SERVIDOR_H
