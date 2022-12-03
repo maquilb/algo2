@@ -3,7 +3,7 @@
 Fachada_Servidor::Fachada_Servidor(
         Nat cantJugadores,
 const Fachada_Variante& variante,
-const Repositorio& r
+Repositorio& r
 ):  _servidor(cantJugadores, variante._variante, r){}
 
 IdCliente Fachada_Servidor::conectarCliente(){

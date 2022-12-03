@@ -15,7 +15,7 @@ public:
      *
      * Complejidad: O(tamanoTab**2 + ALPHABET_SIZE*cantJugadores + cantFichas*cantJugadores)
      */
-    Juego(Nat k, const Variante& v, const Repositorio& r);
+    Juego(Nat k, const Variante& v, Repositorio& r);
 
     /**
      * Ubica una Ocurrencia o en el juego
@@ -130,17 +130,8 @@ private:
         vector<Nat> _fichasDelJugador;
         Nat _puntajeDelJugador;
         queue<Ocurrencia> _ocurrenciasDelJugador;
-        Jugador(Variante v, Repositorio r) : _fichasDelJugador(CrearBolsaFichas(v.fichas(),r)), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
+        Jugador(Variante v, Repositorio &r) : _fichasDelJugador(TAMANIO_ALFABETO), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
         // por fines practicos es un tupla de 3 elemntos
-        const vector<Nat> CrearBolsaFichas(const Nat &f, Repositorio &r) {
-            vector<Nat> res(f);
-            for(Nat i = 0; i<f; i++){
-                Letra l  = r.front();
-                res[ord(l)]++;
-                r.pop_front();
-            }
-            return res;
-        }
     };
     Variante _variante;
     Repositorio _repositorio;

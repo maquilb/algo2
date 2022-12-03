@@ -9,12 +9,14 @@ conjunto_Trie::~conjunto_Trie() {
 }
 
 void conjunto_Trie::eliminar(conjunto_Trie::Nodo* n) {
-    if (n != nullptr){
+    /*if (n != nullptr){
         for(int i = 0; i < TAMANIO_ALFABETO; i++){
             eliminar(n->_siguientes[i]);
         }
-        //delete n;
+        n = nullptr;
+        delete n;
     }
+    delete n; */
 }
 
 void conjunto_Trie::agregar(Repositorio &palabra) {
@@ -35,7 +37,7 @@ void conjunto_Trie::agregar(Repositorio &palabra) {
     actual->_palabraDefinida = true;
 }
 
-bool conjunto_Trie::esVacio() {
+bool conjunto_Trie::esVacio() const{
     bool res = _raiz == nullptr;
     int i =0;
     Nat longitud = _raiz->_siguientes.size();
@@ -76,4 +78,17 @@ void conjunto_Trie::agregarPalabras(set<Repositorio> &palabras) {
         agregar(const_cast<Repositorio &>(*it));
         it++;
     }
+}
+
+conjunto_Trie::conjunto_Trie(const conjunto_Trie &aCopiar) {
+    *this = aCopiar;
+}
+
+conjunto_Trie &conjunto_Trie::operator=(const conjunto_Trie &d) {
+    eliminar(_raiz);
+    this->_raiz = new Nodo();
+    if(not d.esVacio()){
+        copiar(this->_raiz->_siguientes, d._raiz->_siguientes);
+    }
+    return *this;
 }

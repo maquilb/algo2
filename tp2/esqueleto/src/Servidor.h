@@ -18,7 +18,7 @@ public:
     Servidor(
             Nat cantJugadores,
             const Variante& variante,
-            const Repositorio& r
+            Repositorio& r
     );
 
     /**

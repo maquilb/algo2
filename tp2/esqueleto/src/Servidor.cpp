@@ -1,6 +1,6 @@
 #include "Servidor.h"
 
-Servidor::Servidor(Nat cantJugadores, const Variante &variante, const Repositorio &r) : _cantJugadoresConectados(0), _cantJugadoresEsperados(cantJugadores), _notificacionesPersonales(cantJugadores), _cantVistosNotificacionesParaTodos(cantJugadores), _notificacionesParaTodos(), _cantDeNotificaciones(0), _juego(cantJugadores, variante, r) {}
+Servidor::Servidor(Nat cantJugadores, const Variante &variante, Repositorio &r) : _cantJugadoresConectados(0), _cantJugadoresEsperados(cantJugadores), _notificacionesPersonales(cantJugadores), _cantVistosNotificacionesParaTodos(cantJugadores), _notificacionesParaTodos(), _cantDeNotificaciones(0), _juego(cantJugadores, variante, r) {}
 
 void Servidor::conectarCliente() {
     enviarNotiPers(_cantJugadoresConectados, Notificacion::nuevaIdCliente(_cantJugadoresConectados));

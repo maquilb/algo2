@@ -1,7 +1,15 @@
 
 #include "Juego.h"
 
-Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(_variante.tamanoTablero())), _jugadores(k, Jugador(v, r)), _cantidadDeTurnos(0), _turnoDe(0) {}
+Juego::Juego(Nat k, const Variante &v, Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(_variante.tamanoTablero())), _jugadores(k, Jugador(v, r)), _cantidadDeTurnos(0), _turnoDe(0) {
+    for (int i = 0; i < _jugadores.size(); i++) {
+        for(Nat j = 0; j<v.fichas(); j++){
+            Letra l  = r.front();
+            _jugadores[i]._fichasDelJugador[ord(l)]++;
+            r.pop_front();
+        }
+    }
+}
 
 void Juego::ubicar(const Ocurrencia &o) {
     _tablero.ponerLetras(o, _cantidadDeTurnos);
@@ -11,8 +19,8 @@ void Juego::ubicar(const Ocurrencia &o) {
         _turnoDe = 0;
     }
     _jugadores[_turnoDe]._ocurrenciasDelJugador.push(o);
-    _turnoDe ++;
     reponerFichas(o);
+    _turnoDe ++;
 }
 
 IdCliente Juego::turno() {
@@ -72,7 +80,7 @@ Nat Juego::puntaje(IdCliente id) {
 }
 
 Nat Juego::cantFicha(IdCliente id, Letra l) {
-    return 0;
+    return _jugadores[id]._fichasDelJugador[ord(l)];
 }
 
 void Juego :: reponerFichas(const Ocurrencia o){
@@ -109,7 +117,10 @@ tuple<bool, bool> Juego::HorizontalOVertical(Ocurrencia o){
     bool vertical = get<1>(res);
     horizontal = true;
     vertical = true;
-    if (o.size()>0){
+    if (o.size()==1) {
+        horizontal = false;
+        vertical = true;
+    } else if (o.size()>1) {
         auto it = o.begin();
         Nat fila0 = get<0>(*it);
         Nat col0 = get<1>(*it);
@@ -258,6 +269,9 @@ bool Juego::jugadaValida(const Ocurrencia& o) {
             esVertical = get<1>(esHorizontalOVertical);
             if (not(esHorizontal or esVertical)) {
                 res = false;
+            }
+            if (not(esVertical or esHorizontal) && o.size()==1){
+                return true;
             }
         }
 
