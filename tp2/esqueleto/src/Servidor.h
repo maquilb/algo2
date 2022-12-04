@@ -92,7 +92,7 @@ private:
 
     multiset<Letra> fichasIniciales(Nat id);
 
-    multiset<Letra> fichasRepuestas(Nat id, vector<Nat> fichasAnteriores, const vector<Nat> fichasPostJugada);
+    multiset<Letra> fichasRepuestas(Nat id, vector<Nat> &fichasAnteriores, const vector<Nat> &fichasPostJugada);
 
     vector<tuple<Notificacion, Nat>> colaAVector(queue<tuple<Notificacion, Nat>> &queue);
 

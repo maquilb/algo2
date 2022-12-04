@@ -149,33 +149,33 @@ private:
 
     tuple<bool, bool> HorizontalOVertical(Ocurrencia o);
 
-    queue<Repositorio> palabrasFormadasTransversales(Ocurrencia o, bool sentido);
+    queue<Repositorio> palabrasFormadasTransversales(Ocurrencia &o, bool sentido);
 
-    Repositorio palabraFormadaHorizontal(Ficha f);
+    Repositorio palabraFormadaHorizontal(Ficha &f);
 
-    Repositorio palabraFormadaVertical(Ficha f);
+    Repositorio palabraFormadaVertical(Ficha &f);
 
-    Repositorio formarPalabraJugadaPrincial(Ocurrencia o, bool sentido);
+    Repositorio formarPalabraJugadaPrincial(Ocurrencia &o, bool sentido);
 
-    queue<Repositorio> palabrasFormadas(Ocurrencia o);
+    queue<Repositorio> palabrasFormadas(Ocurrencia &o);
 
     Nat  calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus);
 
-    list<Repositorio> PalabrasTransversales(Tablero tablero, const Ocurrencia &set, bool sentido);
+    list<Repositorio> PalabrasTransversales(const Tablero &tablero, const Ocurrencia &set, bool sentido);
 
     bool tieneLasFichas(vector<Nat> &vector, const Ocurrencia &set);
 
-    void SumarAparicion(vector<tuple<Letra, Nat>> apariciones, Letra l);
+    void SumarAparicion(vector<tuple<Letra, Nat>> &apariciones, Letra l);
 
     bool ocurrenciaSinPosicionesRepetidas(const Ocurrencia &set);
 
     bool DistanciaMayorAlongMax(const Ocurrencia &o, bool sentido, Nat largoMax);
 
-    Nat distanciaEntreFichas(Ficha min, Ficha max, bool sentido);
+    Nat distanciaEntreFichas(Ficha &min, Ficha &max, bool sentido);
 
-    Ficha masChico(Ficha ficha1, Ficha ficha2, bool sentido);
+    Ficha masChico(Ficha &ficha1, Ficha &ficha2, bool sentido);
 
-    Ficha masGrande(Ficha ficha1, Ficha ficha2, bool sentido);
+    Ficha masGrande(Ficha &ficha1, Ficha &ficha2, bool sentido);
 
     Repositorio principalHorizontal(const Tablero &tablero, const vector<Ficha> &vector1);
 

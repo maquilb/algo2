@@ -16,7 +16,9 @@ void Servidor::conectarCliente() {
 }
 
 void Servidor::recibirMensaje(IdCliente id, const Ocurrencia &o) {
+
     bool esValida = ((empezoJuego()) && (id == _juego.turno()));
+
     if(esValida) {
         bool jugValida = _juego.jugadaValida(o);
 
@@ -110,7 +112,7 @@ multiset<Letra> Servidor::fichasIniciales(Nat id) {
     return res;
 }
 
-multiset<Letra> Servidor::fichasRepuestas(Nat id, vector<Nat> fichasAnteriores, const vector<Nat> fichasPostJugada) {
+multiset<Letra> Servidor::fichasRepuestas(Nat id, vector<Nat> &fichasAnteriores, const vector<Nat> &fichasPostJugada) {
     multiset<Letra> res;
     for(Nat i=0; i < fichasPostJugada.size() - 1 ;i++ ){
         if(fichasAnteriores[i] < fichasPostJugada[i]){

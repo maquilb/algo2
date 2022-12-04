@@ -9,14 +9,14 @@ conjunto_Trie::~conjunto_Trie() {
 }
 
 void conjunto_Trie::eliminar(conjunto_Trie::Nodo* n) {
-    /*if (n != nullptr){
+   /*
+    if (n != nullptr){
         for(int i = 0; i < TAMANIO_ALFABETO; i++){
             eliminar(n->_siguientes[i]);
         }
-        n = nullptr;
         delete n;
     }
-    delete n; */
+    */
 }
 
 void conjunto_Trie::agregar(Repositorio &palabra) {

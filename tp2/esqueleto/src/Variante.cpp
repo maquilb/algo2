@@ -38,7 +38,7 @@ bool Variante::palabrasLegitimas(const list<Repositorio> &palabras) const {
     bool res = true;
     auto it = palabras.begin();
     while(res && it != palabras.end()){
-        const Repositorio pal = palabras.front();
+        const Repositorio pal = *it;
         res = palabraLegitima(pal);
         it++;
     }
