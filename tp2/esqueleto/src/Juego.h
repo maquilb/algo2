@@ -187,7 +187,7 @@ private:
 
     vector<Ficha> ocurrenciaAVector(const Ocurrencia &o);
 
-    void ordenarVectorDeFichas(vector<Ficha> vect_fichas, bool sentido);
+    void ordenarVectorDeFichas(vector<Ficha> &vect_fichas, bool sentido);
 
     Repositorio FormarPalabraPrincipal(const Tablero &tab, const Ocurrencia &o, bool sentido);
 };

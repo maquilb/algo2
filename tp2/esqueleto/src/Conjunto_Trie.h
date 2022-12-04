@@ -44,16 +44,16 @@ private:
         }
     };
 
-    void copiar(vector<Nodo*>& v1, vector<Nodo*> v2){
-        for(int i = 0 ; i < v2.size(); i++){
-            if(v2[i] != nullptr){
-                v1[i] = new Nodo();
-                if(v2[i]->_palabraDefinida){
-                    v1[i]->_palabraDefinida = true;
-                }
-                copiar(v1[i]->_siguientes, v2[i]->_siguientes);
+    Nodo* copiar(Nodo* d){
+        Nodo* n = new Nodo;
+        n->_palabraDefinida = d->_palabraDefinida;
+        n->_siguientes = d->_siguientes;
+        for(int i = 0 ; i < TAMANIO_ALFABETO; i++){
+            if(n->_siguientes[i] != nullptr){
+                n->_siguientes[i] = copiar(n->_siguientes[i]);
             }
         }
+        return n;
     }
 
 

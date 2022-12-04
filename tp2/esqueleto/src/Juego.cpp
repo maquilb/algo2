@@ -450,13 +450,13 @@ vector<Ficha> Juego::ocurrenciaAVector(const Ocurrencia &o) {
     return res;
 }
 
-void Juego::ordenarVectorDeFichas(vector<Ficha> vect_fichas, bool sentido) {
+void Juego::ordenarVectorDeFichas(vector<Ficha> &vect_fichas, bool sentido) {
     bool swapped = true;
     int i = vect_fichas.size();
     while(swapped) {
         swapped = false;
         int j = 0;
-        while (j < i) {
+        while (j < i-1) {
             bool mayorFila = get<0>(vect_fichas[j]) > get<0>(vect_fichas[j+1]);
             bool mayorColumna = get<1>(vect_fichas[j]) > get<1>(vect_fichas[j+1]);
             if((mayorFila and sentido) or ((not sentido) and mayorColumna)){
