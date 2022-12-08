@@ -38,10 +38,14 @@ public:
      */
     bool palabraLegitima(const Palabra& palabra) const;
 
+    // Esto no esta bueno que sea publico, deberian dejarlo privado, y tener una
+    // funcion publica para accederlo
     Variante _variante;
 
 private:
     set<Repositorio> setvectorToList(set<Palabra> palabra)const;
+    // Intente nombrar semanticamente, esto convierte palabras a repositorios
+    // no vectores a listas
     Repositorio vectorToList(Palabra pal)const;
 };
 

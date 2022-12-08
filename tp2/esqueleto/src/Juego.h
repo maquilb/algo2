@@ -130,9 +130,12 @@ private:
         vector<Nat> _fichasDelJugador;
         Nat _puntajeDelJugador;
         queue<Ocurrencia> _ocurrenciasDelJugador;
+        // para que necesitan la variante y el repositorio aca?
         Jugador(Variante v, Repositorio &r) : _fichasDelJugador(TAMANIO_ALFABETO), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
     };
     Variante _variante;
+    // no solo sacaron el const de repositorio, sino que tambien lo copian,
+//    al pedox
     Repositorio _repositorio;
     Tablero _tablero;
     vector<Jugador> _jugadores;
@@ -149,6 +152,9 @@ private:
 
     tuple<bool, bool> HorizontalOVertical(Ocurrencia o);
 
+    // Hay demasiadas funciones que parecen hacer lo mismo
+    // En particular que forman palabrasm, lo ideal seria simplificar ese
+    // codigo
     queue<Repositorio> palabrasFormadasTransversales(Ocurrencia &o, bool sentido);
 
     Repositorio palabraFormadaHorizontal(Ficha &f);

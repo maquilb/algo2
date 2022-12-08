@@ -15,11 +15,14 @@ Nat Fachada_Variante::puntajeLetra(Letra l) const{
 }
 
 bool Fachada_Variante::palabraLegitima(const Palabra& palabra) const{
+//    Estan  mezclando cosas, una cosa es una lista, y otra es repositorio
+// por que aca palabra_aux tiene tipo repositorio?
     Repositorio palabra_aux = vectorToList(palabra);
     return _variante.palabraLegitima(palabra_aux);
 }
 
 
+// Estan copiando el set porque no es referencia, deberia ser const set<Palabra>&
 set<Repositorio> Fachada_Variante::setvectorToList(const set<Palabra> palabra) const{
     set<Repositorio> res;
     auto it = palabra.begin();
@@ -34,6 +37,8 @@ set<Repositorio> Fachada_Variante::setvectorToList(const set<Palabra> palabra) c
     }
     return res;
 }
+// Palabra deberia ser const &, copian muchas cosas en muchos lados
+
 Repositorio Fachada_Variante::vectorToList(Palabra pal) const{
     Repositorio res;
     for (int i=0; i<pal.size(); i++){

@@ -17,6 +17,7 @@ void Servidor::conectarCliente() {
 
 void Servidor::recibirMensaje(IdCliente id, const Ocurrencia &o) {
 
+    // Una pista, el bug de ubicar seguro trae problemas por aquí
     bool esValida = ((empezoJuego()) && (id == _juego.turno()));
 
     if(esValida) {

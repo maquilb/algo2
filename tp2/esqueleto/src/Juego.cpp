@@ -2,6 +2,7 @@
 #include "Juego.h"
 
 Juego::Juego(Nat k, const Variante &v, Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(_variante.tamanoTablero())), _jugadores(k, Jugador(v, r)), _cantidadDeTurnos(0), _turnoDe(0) {
+    // Esto se podria sacar a una funcion que tambien sirva para `reponerFichas`
     for (int i = 0; i < _jugadores.size(); i++) {
         for(Nat j = 0; j<v.fichas(); j++){
             Letra l  = _repositorio.front();
@@ -15,6 +16,9 @@ void Juego::ubicar(const Ocurrencia &o) {
     _tablero.ponerLetras(o, _cantidadDeTurnos);
     _cantidadDeTurnos ++;
 
+    // Esto parece estar mal, hagan un test que falle a raiz de este problema
+    // y solo despues de tener ese test corrijan el bug
+    // BUG A CORREGIR
     if (_turnoDe == _jugadores.size()){
         _turnoDe = 0;
     }
@@ -113,6 +117,7 @@ Nat Juego::calcularPuntos(queue<Repositorio> &palabras){
 
 tuple<bool, bool> Juego::HorizontalOVertical(Ocurrencia o){
     // declaro tupla pra meter datos
+    // me gusta mas como lo tienen en diseño, con dos variables
     tuple<bool, bool> res = make_tuple(true, true);
 
     if (o.size()==1) {
@@ -142,6 +147,9 @@ tuple<bool, bool> Juego::HorizontalOVertical(Ocurrencia o){
 
 Nat  Juego::calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus){
     Nat res = 0;
+//    a veces usan not, otras !
+// A veces iteradores, otras esta forma
+// Como programador, suele estar bueno ser uniforme
     while(not ocus.empty()){
         Ocurrencia p = ocus.front();
         queue<Repositorio> palabras = palabrasFormadas(p);
@@ -169,6 +177,8 @@ queue<Repositorio> Juego::palabrasFormadas(Ocurrencia &o){
     }
 }
 
+// Intenten unificar esta y palabraFormadaHorizontal
+// Son casi la misma funcion
 Repositorio Juego::palabraFormadaVertical(Ficha &f) {
     Repositorio res;
     Letra l = get<2>(f);

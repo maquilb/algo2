@@ -13,6 +13,7 @@ public:
      *
      * Complejidad: O(tamanoTab**2 + ALPHABET_SIZE*cantJugadores + cantFichas*cantJugadores)
      */
+//     No le deberian haber sacado el const al repositorio
     Fachada_Juego(Nat k, const Fachada_Variante& v, Repositorio& r);
 
     /**
@@ -76,6 +77,7 @@ public:
 
 private:
     Juego _juego;
+    // La variante la estan copiando, idealmente deberia ser un const &
     Fachada_Variante _fvariante;
 };
 
