@@ -70,6 +70,24 @@ Nat Tablero::turnoApoyado(Nat fila, Nat columna) {
 }
 
 
+bool Tablero::enTablero(Nat fila, Nat columna) const {
+    return ((fila < _tamanio ) && (columna < _tamanio));
+}
+
+bool Tablero::estaOcupada(Nat fila, Nat columna) const {
+    bool res =  enTablero(fila, columna) && (get<0>(_casillero[fila][columna]));
+    return res;
+}
+
+Nat Tablero::turnoApoyado(Nat fila, Nat columna) const {
+    return get<2>(_casillero[fila][columna]);
+}
+
+Letra Tablero::letraEnPos(Nat fila, Nat columna) const {
+    return get<1>(_casillero[fila][columna]);
+}
+
+
 
 
 

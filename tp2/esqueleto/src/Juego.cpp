@@ -161,7 +161,7 @@ queue<Repositorio> Juego::palabrasFormadas(Ocurrencia &o){
             sentido = false;
         }
         queue<Repositorio> res = palabrasFormadasTransversales(o, sentido);
-        Repositorio palabraPrincipal = formarPalabraJugadaPrincial(o,sentido);
+        Repositorio palabraPrincipal = formarPalabraEnSentido(*o.begin(),sentido);
         res.push(palabraPrincipal);
         return res;
     } else {
@@ -169,76 +169,59 @@ queue<Repositorio> Juego::palabrasFormadas(Ocurrencia &o){
     }
 }
 
-Repositorio Juego::palabraFormadaVertical(Ficha &f) {
-    Repositorio res;
-    Letra l = get<2>(f);
-    res.push_front(l);
-    Nat fila = get<0>(f);
-    Nat columna = get<1>(f);
-    signed int arriba = fila - 1;
-    signed int abajo = fila + 1;
-    Nat turno = _tablero.turnoApoyado(fila, columna);
-    while (0<= arriba && _tablero.estaOcupada(arriba, columna) && turno>= _tablero.turnoApoyado(arriba, columna)){
-        Letra l0 = _tablero.letraEnPos(arriba, columna);
-        res.push_front(l0);
-        arriba--;
-    }
-    while (abajo <= _tablero.tamanio() && _tablero.estaOcupada(abajo, columna) && turno>= _tablero.turnoApoyado(abajo, columna)){
-        Letra l0 = _tablero.letraEnPos(abajo, columna);
-        res.push_back(l0);
-        abajo++;
-    }
-    return res;
-}
-
-Repositorio Juego::palabraFormadaHorizontal(Ficha &f) {
-    Repositorio res;
-    Letra l = get<2>(f);
-    res.push_front(l);
-    Nat fila = get<0>(f);
-    Nat columna = get<1>(f);
-    signed int izquierda = columna - 1;
-    signed int derecha = columna + 1;
-    Nat turno = _tablero.turnoApoyado(fila, columna);
-    while (derecha <=_tablero.tamanio() && _tablero.estaOcupada(fila, derecha) && turno>= _tablero.turnoApoyado(fila, derecha)){
-        Letra l0 = _tablero.letraEnPos(fila, derecha);
-        res.push_back(l0);
-        derecha++;
-    }
-    while (0<= izquierda && _tablero.estaOcupada(fila, izquierda) && turno>= _tablero.turnoApoyado(fila, derecha)){
-        Letra l0 = _tablero.letraEnPos(fila, izquierda);
-        res.push_front(l0);
-        izquierda--;
-    }
-    return res;
-}
 
 queue<Repositorio> Juego::palabrasFormadasTransversales(Ocurrencia &o, bool sentido) {
     queue<Repositorio> res;
     auto it = o.begin();
     while(it != o.end()){
         Ficha f= *it;
-        Repositorio palabra;
-        if (sentido){
+        Repositorio palabra = formarPalabraEnSentido(f, not sentido);
+/*        if (sentido){
             palabra =  palabraFormadaVertical(f);
         } else {
             palabra =  palabraFormadaHorizontal(f);
-        }
+        }*/
+
         res.push(palabra);
         it++;
     }
     return res;
 }
 
-Repositorio Juego::formarPalabraJugadaPrincial(Ocurrencia &o, bool sentido) {
-    auto it = o.begin();
-    Ficha f = *it;
-    Repositorio res;
-    if(sentido){
-        res = palabraFormadaHorizontal(f);
-    } else {
-        res = palabraFormadaVertical(f);
+
+Repositorio Juego::formarPalabraEnSentido(Ficha f,bool sentido) const {
+    list<Letra> res = {get<2>(f)};
+
+    Nat fila = get<0>(f);
+    Nat col = get<1>(f);
+
+    bool jugada = _tablero.estaOcupada(fila, col);
+    // jugada == false -> estoy formando transversales en jugadaValida
+
+    int turno_jug = (-1);
+    if(jugada) turno_jug = _tablero.turnoApoyado(fila,col);
+
+    signed int ant_fil = fila ,ant_col = col, sig_fil = fila, sig_col = col;
+
+    (sentido)? ant_col-=1: ant_fil-=1;
+    (sentido)? sig_col+=1: sig_fil+=1;
+
+    while( _tablero.estaOcupada(ant_fil,ant_col) &&  (not jugada ||
+                                                      (jugada && turno_jug >= _tablero.turnoApoyado(ant_fil,ant_col))) ){
+
+        Letra letraAdelante = _tablero.letraEnPos(ant_fil, ant_col);
+        res.push_front(letraAdelante);
+        (sentido)? ant_col-=1 : ant_fil-=1;
     }
+
+    while( _tablero.estaOcupada(sig_fil,sig_col) && (not jugada ||
+                                                     (jugada && turno_jug >= _tablero.turnoApoyado(sig_fil, sig_col))) ){
+
+        Letra letraSiguiente = _tablero.letraEnPos(sig_fil, sig_col);
+        res.push_back(letraSiguiente);
+        (sentido)? sig_col+=1 : sig_fil+=1;
+    }
+
     return res;
 }
 
@@ -388,56 +371,18 @@ list<Repositorio> Juego::PalabrasTransversales(const Tablero &tab, const Ocurren
     while(it != o.end()){
         Ficha f= *it;
         Repositorio palabra;
-        if (sentido){
+/*        if (sentido){
             palabra =  palabraTransversalVertical(tab, f);
         } else {
             palabra =  palabraTransversalHorizontal(tab, f);
-        }
+        }*/
+        palabra = formarPalabraEnSentido(f,not sentido);
         res.push_back(palabra);
         it++;
     }
     return res;
 }
 
-Repositorio Juego::palabraTransversalHorizontal(const Tablero& tab, const Ficha &f){
-    Repositorio res;
-    Nat fila = get<0>(f);
-    Nat Columna = get<1>(f);
-    Nat izquierda = Columna - 1;
-    Nat derecha = Columna + 1;
-    res.push_back(get<2>(f));
-    while( _tablero.estaOcupada(fila,derecha)){
-        Letra letra0 = _tablero.letraEnPos(fila,derecha);
-        res.push_front(letra0);
-        derecha++;
-    }
-    while( _tablero.estaOcupada(fila,izquierda)){
-        Letra letra0 = _tablero.letraEnPos(fila,izquierda);
-        res.push_back(letra0);
-        izquierda--;
-    }
-    return res;
-}
-
-Repositorio Juego::palabraTransversalVertical(const Tablero& tab, const Ficha &f){
-    Repositorio res;
-    Nat fila = get<0>(f);
-    Nat Columna = get<1>(f);
-    Nat Arriba = fila - 1;
-    Nat Abajo = fila + 1;
-    res.push_back(get<2>(f));
-    while( _tablero.estaOcupada(Arriba,Columna)){
-        Letra letra0 = _tablero.letraEnPos(Arriba,Columna);
-        res.push_front(letra0);
-        Arriba--;
-    }
-    while( _tablero.estaOcupada(Abajo,Columna)){
-        Letra letra0 = _tablero.letraEnPos(Abajo,Columna);
-        res.push_back(letra0);
-        Abajo++;
-    }
-    return res;
-}
 
 vector<Ficha> Juego::ocurrenciaAVector(const Ocurrencia &o) {
     vector<Ficha> res;
@@ -473,41 +418,43 @@ void Juego::ordenarVectorDeFichas(vector<Ficha> &vect_fichas, bool sentido) {
 
 
 Repositorio Juego::FormarPalabraPrincipal( const Tablero& tab, const Ocurrencia& o ,bool sentido) {
+    Repositorio res;
+    // pasa a vector la ocurrencia y la ordena,
     vector<Ficha> fichas = ocurrenciaAVector(o);
     ordenarVectorDeFichas(fichas, sentido);
-    Repositorio res;
-    if (sentido) {
-        res = principalHorizontal(_tablero, fichas);
-    } else {
-        res = principalVertical(_tablero, fichas);
-    }
-    return res;
-}
 
-Repositorio Juego::principalHorizontal(const Tablero &tablero, const vector<Ficha> &fichas) {
-    Repositorio res;
+    // pone la primer letra en el resultado e inicializa una variable para iterar sobre el vector fichas
     res.push_back(get<2>(fichas[0]));
-    Nat fila = get<0>(fichas[0]);
-    Nat columna = get<1>(fichas[0]);
-    signed int izquierda = columna - 1;
-    signed int derecha = columna + 1;
+    signed int fila = get<0>(fichas[0]);
+    signed int col = get<1>(fichas[0]);
     int i = 1;
+
+    // iteradores para recorrer el tablero en base a la primer ficha del vector.
+    signed int ant_fil = fila ,ant_col = col, sig_fil = fila, sig_col = col;
+    (sentido)? ant_col-=1: ant_fil-=1;
+    (sentido)? sig_col+=1: sig_fil+=1;
+
+    // condiciones de guarda de los ciclos
     bool esContigua = true;
     bool termino = false;
-    while( 0 <= izquierda && _tablero.hayUnaLetraEnPos(fila,izquierda)){
-        Letra letraIzquierda = _tablero.letraEnPos(fila,izquierda);
-        res.push_front(letraIzquierda);
-        izquierda--;
+
+    while( _tablero.enTablero(ant_fil, ant_col) && _tablero.hayUnaLetraEnPos(ant_fil, ant_col)){
+        Letra letraAnterior = _tablero.letraEnPos(ant_fil, ant_col);
+        res.push_front(letraAnterior);
+        (sentido)? ant_col-=1: ant_fil-=1;
     }
-    while(derecha < _tablero.tamanio() && not termino && esContigua){
-        if(_tablero.hayUnaLetraEnPos(fila,derecha)){
-            Letra letraDerecha = _tablero.letraEnPos(fila,derecha);
-            res.push_back(letraDerecha);
+    while(_tablero.enTablero(sig_fil, sig_col) && not termino && esContigua){
+        if(_tablero.hayUnaLetraEnPos(sig_fil, sig_col)){
+            Letra letraPosterior = _tablero.letraEnPos(sig_fil, sig_col);
+            res.push_back(letraPosterior);
         }else{
             if(i == fichas.size()){
                 termino = true;
             }else{
-                if(get<1>(fichas[i]) == derecha){
+                Nat ficha_i_fil = get<0>(fichas[i]);
+                Nat ficha_i_col = get<1>(fichas[i]);
+
+                if(ficha_i_fil == sig_fil && ficha_i_col == sig_col){
                     Letra LetraNueva = get<2>(fichas[i]);
                     res.push_back(LetraNueva);
                     i++;
@@ -517,48 +464,8 @@ Repositorio Juego::principalHorizontal(const Tablero &tablero, const vector<Fich
                 }
             }
         }
-        derecha++;
+        (sentido)? sig_col+=1: sig_fil+=1;
     }
     return res;
 }
-
-
-Repositorio Juego::principalVertical(const Tablero &tablero, const vector<Ficha> &fichas) {
-    Repositorio res;
-    res.push_back(get<2>(fichas[0]));
-    Nat fila = get<0>(fichas[0]);
-    Nat columna = get<1>(fichas[0]);
-    signed int arriba = fila - 1;
-    signed int abajo = fila + 1;
-    int i = 1;
-    bool esContigua = true;
-    bool termino = false;
-    while( 0 <= arriba && _tablero.hayUnaLetraEnPos(arriba,columna)){
-        Letra letraArriba = _tablero.letraEnPos(arriba,columna);
-        res.push_front(letraArriba);
-        arriba--;
-    }
-    while(abajo < _tablero.tamanio() && not termino && esContigua){
-        if(_tablero.hayUnaLetraEnPos(abajo,columna)){
-            Letra letraAbajo = _tablero.letraEnPos(abajo,columna);
-            res.push_back(letraAbajo);
-        }else{
-            if(i == fichas.size()){
-                termino = true;
-            }else{
-                if(get<0>(fichas[i]) == abajo){
-                    Letra LetraNueva = get<2>(fichas[i]);
-                    res.push_back(LetraNueva);
-                    i++;
-                }else{
-                    res = Repositorio();
-                    esContigua = false;
-                }
-            }
-        }
-        abajo++;
-    }
-    return res;
-}
-
 

@@ -151,12 +151,6 @@ private:
 
     queue<Repositorio> palabrasFormadasTransversales(Ocurrencia &o, bool sentido);
 
-    Repositorio palabraFormadaHorizontal(Ficha &f);
-
-    Repositorio palabraFormadaVertical(Ficha &f);
-
-    Repositorio formarPalabraJugadaPrincial(Ocurrencia &o, bool sentido);
-
     queue<Repositorio> palabrasFormadas(Ocurrencia &o);
 
     Nat  calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus);
@@ -177,19 +171,13 @@ private:
 
     Ficha masGrande(Ficha &ficha1, Ficha &ficha2, bool sentido);
 
-    Repositorio principalHorizontal(const Tablero &tablero, const vector<Ficha> &vector1);
-
-    Repositorio principalVertical(const Tablero &tablero, const vector<Ficha> &vector1);
-
-    Repositorio palabraTransversalVertical(const Tablero &tab, const Ficha &f);
-
-    Repositorio palabraTransversalHorizontal(const Tablero& tab, const Ficha &f);
-
     vector<Ficha> ocurrenciaAVector(const Ocurrencia &o);
 
     void ordenarVectorDeFichas(vector<Ficha> &vect_fichas, bool sentido);
 
     Repositorio FormarPalabraPrincipal(const Tablero &tab, const Ocurrencia &o, bool sentido);
+
+    Repositorio formarPalabraEnSentido(Ficha f, bool sentido) const;
 };
 
 

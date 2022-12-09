@@ -31,6 +31,10 @@ public:
 
     Nat turnoApoyado(Nat fila, Nat columna);
 
+    bool enTablero(Nat fila, Nat columna) const;
+    bool estaOcupada(Nat fila, Nat columna) const;
+    Nat turnoApoyado(Nat fila, Nat columna) const;
+    Letra letraEnPos(Nat fila, Nat columna) const;
 
 private:
     Nat _tamanio;
