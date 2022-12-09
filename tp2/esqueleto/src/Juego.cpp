@@ -14,13 +14,12 @@ Juego::Juego(Nat k, const Variante &v, Repositorio &r): _variante(v), _repositor
 void Juego::ubicar(const Ocurrencia &o) {
     _tablero.ponerLetras(o, _cantidadDeTurnos);
     _cantidadDeTurnos ++;
-
-    if (_turnoDe == _jugadores.size()){
-        _turnoDe = 0;
-    }
     _jugadores[_turnoDe]._ocurrenciasDelJugador.push(o);
     reponerFichas(o);
     _turnoDe ++;
+    if (_turnoDe == _jugadores.size()){
+        _turnoDe = 0;
+    }
 }
 
 IdCliente Juego::turno() {
@@ -72,9 +71,8 @@ Letra Juego::letra(Nat i, Nat j) {
 }
 
 Nat Juego::puntaje(IdCliente id) {
-    queue <Ocurrencia> ocus = _jugadores[id]._ocurrenciasDelJugador;
     Nat puntosACalcular;
-    puntosACalcular = calcularPuntosPalabrasJugadas(ocus);
+    puntosACalcular = calcularPuntosPalabrasJugadas(_jugadores[id]._ocurrenciasDelJugador);
     _jugadores[id]._puntajeDelJugador += puntosACalcular;
     return _jugadores[id]._puntajeDelJugador;
 }
