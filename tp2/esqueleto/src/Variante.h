@@ -16,7 +16,7 @@ public:
             Nat tamanoTab,
             Nat cantFichas,
             const map<Letra, Nat>& puntajes,
-            const set<Repositorio>& palabrasLegitimas
+            const set<list<Letra>>& palabrasLegitimas
     ) ;
 
     /**
@@ -37,12 +37,12 @@ public:
     /**
      * Indica si una palabra es legitima o no
      */
-    bool palabraLegitima(const Repositorio &palabra) const;
+    bool palabraLegitima(const list<Letra> &palabra) const;
 
     /**
      * Indica si las palabras son legitimas
      */
-    bool palabrasLegitimas(const list<Repositorio> &palabras) const;
+    bool palabrasLegitimas(const list<list<Letra>> &palabras) const;
 
     /**
      * Indica la palabra mas larga del diccionario

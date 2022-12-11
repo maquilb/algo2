@@ -130,7 +130,7 @@ private:
         vector<Nat> _fichasDelJugador;
         Nat _puntajeDelJugador;
         queue<Ocurrencia> _ocurrenciasDelJugador;
-        Jugador(Variante v, Repositorio &r) : _fichasDelJugador(TAMANIO_ALFABETO), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
+        Jugador() : _fichasDelJugador(TAMANIO_ALFABETO), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
     };
     Variante _variante;
     Repositorio _repositorio;
@@ -140,22 +140,28 @@ private:
     Nat _turnoDe;
 
     /**
-     * Definimos la funcion reponerFichas, que repone las fichas en la bolsa del jugador
+     * Definimos la funcion reponerFichas, que actualiza las fichas  del jugador del turno actual
+     * para esto quita las fichas de la ocurrencia o las repone con las siguientes fichas en el Repositorio.
      **/
 
     void reponerFichas(const Ocurrencia &o);
 
-    Nat calcularPuntos(queue<Repositorio> &palabras);
+    /* para un id válido y un natural cant repone un numero cant de fichas en el repositorio
+        del jugador id.
+     */
+    void darFichas(const Nat &id, const Nat &cant);
+
+    Nat calcularPuntos(queue<list<Letra>> &palabras);
 
     tuple<bool, bool> HorizontalOVertical(Ocurrencia o);
 
-    queue<Repositorio> palabrasFormadasTransversales(Ocurrencia &o, bool sentido);
+    queue<list<Letra>> palabrasFormadasTransversales(Ocurrencia &o, bool sentido);
 
-    queue<Repositorio> palabrasFormadas(Ocurrencia &o);
+    queue<list<Letra>> palabrasFormadas(Ocurrencia &o);
 
     Nat  calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus);
 
-    list<Repositorio> PalabrasTransversales(const Tablero &tablero, const Ocurrencia &set, bool sentido);
+    list<list<Letra>> PalabrasTransversales(const Tablero &tablero, const Ocurrencia &set, bool sentido);
 
     bool tieneLasFichas(vector<Nat> &vector, const Ocurrencia &set);
 
@@ -175,9 +181,30 @@ private:
 
     void ordenarVectorDeFichas(vector<Ficha> &vect_fichas, bool sentido);
 
-    Repositorio FormarPalabraPrincipal(const Tablero &tab, const Ocurrencia &o, bool sentido);
+    /* PRE: @o es una ocurrencia que no tiene fichas con misma coordenada y distinta letra,
+     *      tiene un largo menor a la longitud maxima de la palabra valida mas larga, y todas las fichas
+     *      poseen la misma coordenada de fila o de la columna (es horizontal o vertical)
+     *
+     * POST: @RETURN un lista de letras (palabra) con una longitud acotada por la palabra valida mas larga,
+     *       la palabra esta formada por todas las letras de las fichas de la ocurrencia parametro y por las
+     *       fichas que estan entre la ficha "mas chica" y la ficha "mas grande", ademas de todas las que estan
+     *       continuamente despues y antes de estas respectivamente en el tablero.
+     *       En caso de no existir una palabra con todos estos requisitos devuelve una lista vacia.
 
-    Repositorio formarPalabraEnSentido(Ficha f, bool sentido) const;
+     * Comentario: el juego usa esta funcion para armar una palabra entre la ocurrencia y las fichas que han sido
+     *              jugadas previamente. De no ser posible formar una palabra con todas estas devuelve una lista vacia.
+     * */
+
+    list<Letra> FormarPalabraPrincipal(const Tablero &tab, const Ocurrencia &o, bool sentido);
+
+    /* Esta funcion recibe una ficha y un sentido. Recorre el tablero del juego en forma horizontal (vertical) si sentido
+     * es de valor true (false) tomando las fichas del mismo hasta que no haya alguna o bien si la ficha F esta en el tablero
+     * hasta que el turno de las fichas sea mayor al turno de f.
+     * Esta funcion permite formar palabras transversales de una jugada o bien "leer" la palabra que ha sido jugada
+     * cuando se jugo la ficha f.
+     * */
+    list<Letra> formarPalabraEnSentido(Ficha f, bool sentido) const;
+
 };
 
 

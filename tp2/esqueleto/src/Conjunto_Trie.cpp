@@ -17,7 +17,7 @@ void conjunto_Trie::eliminar(conjunto_Trie::Nodo* n) {
     }
 }
 
-void conjunto_Trie::agregar(Repositorio &palabra) {
+void conjunto_Trie::agregar(list<Letra> &palabra) {
     Nat longitud = palabra.size();
     if (_longitudmax < longitud){
         _longitudmax = longitud;
@@ -45,7 +45,7 @@ bool conjunto_Trie::esVacio() const{
     return res;
 }
 
-bool conjunto_Trie::pertenece(const Repositorio& palabra) const {
+bool conjunto_Trie::pertenece(const list<Letra>& palabra) const {
     bool res = true;
     Nodo* actual = _raiz;
     if (palabra.size() > _longitudmax){
@@ -69,10 +69,10 @@ Nat conjunto_Trie::lmax() const {
     return _longitudmax;
 }
 
-void conjunto_Trie::agregarPalabras(set<Repositorio> palabras) {
+void conjunto_Trie::agregarPalabras(set<list<Letra>> palabras) {
     auto it = palabras.begin();
     while(it != palabras.end()){
-        agregar(const_cast<Repositorio &>(*it));
+        agregar(const_cast<list<Letra> &>(*it));
         it++;
     }
 }

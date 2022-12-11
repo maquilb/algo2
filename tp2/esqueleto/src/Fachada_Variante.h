@@ -38,11 +38,11 @@ public:
      */
     bool palabraLegitima(const Palabra& palabra) const;
 
-    Variante _variante;
-
+    const Variante& variante() const;
 private:
-    set<Repositorio> setvectorToList(set<Palabra> palabra)const;
-    Repositorio vectorToList(Palabra pal)const;
+    Variante _variante;
+    set<list<Letra>> setvectorToList(const set<Palabra>& palabra)const;
+    list<Letra> vectorToList(const Palabra& pal)const;
 };
 
 #endif //FACHADA_VARIANTE_H

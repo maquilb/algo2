@@ -25,16 +25,16 @@ public:
     conjunto_Trie& operator=(const conjunto_Trie& d);
 
 
-    void agregar(Repositorio &palabra);
+    void agregar(list<Letra> &palabra);
 
     bool esVacio() const;
 
-    bool pertenece(const Repositorio &palabra) const;
+    bool pertenece(const list<Letra> &palabra) const;
 
     /* Longitud de la palabra mas larga */
     Nat lmax() const;
 
-    void agregarPalabras(set<Repositorio> palabras);
+    void agregarPalabras(set<list<Letra>> palabras);
 
 private:
     struct Nodo{

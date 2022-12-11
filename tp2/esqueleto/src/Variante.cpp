@@ -1,7 +1,7 @@
 
 #include "Variante.h"
 
-Variante::Variante(Nat tamanoTab, Nat cantFichas, const map<Letra, Nat> &puntajes, const set<Repositorio> &palabrasLegitimas)
+Variante::Variante(Nat tamanoTab, Nat cantFichas, const map<Letra, Nat> &puntajes, const set<list<Letra>> &palabrasLegitimas)
 : _palabrasPermitidas(conjunto_Trie()){
     _tamano = tamanoTab;
     _cantidadDeFichas = cantFichas;
@@ -30,15 +30,15 @@ Nat Variante::puntajeLetra(Letra l) const {
     return _valorLetras[ord(l)];
 }
 
-bool Variante::palabraLegitima(const Repositorio &palabra) const {
+bool Variante::palabraLegitima(const list<Letra> &palabra) const {
     return _palabrasPermitidas.pertenece(palabra);
 }
 
-bool Variante::palabrasLegitimas(const list<Repositorio> &palabras) const {
+bool Variante::palabrasLegitimas(const list<list<Letra>> &palabras) const {
     bool res = true;
     auto it = palabras.begin();
     while(res && it != palabras.end()){
-        const Repositorio pal = *it;
+        const list<Letra> pal = *it;
         res = palabraLegitima(pal);
         it++;
     }

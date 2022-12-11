@@ -1,14 +1,8 @@
 
 #include "Juego.h"
 
-Juego::Juego(Nat k, const Variante &v, Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(_variante.tamanoTablero())), _jugadores(k, Jugador(v, r)), _cantidadDeTurnos(0), _turnoDe(0) {
-    for (int i = 0; i < _jugadores.size(); i++) {
-        for(Nat j = 0; j<v.fichas(); j++){
-            Letra l  = _repositorio.front();
-            _jugadores[i]._fichasDelJugador[ord(l)]++;
-            _repositorio.pop_front();
-        }
-    }
+Juego::Juego(Nat k, const Variante &v, Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(_variante.tamanoTablero())), _jugadores(k, Jugador()), _cantidadDeTurnos(0), _turnoDe(0) {
+    for (int i = 0; i < _jugadores.size(); i++) darFichas(i,v.fichas());
 }
 
 void Juego::ubicar(const Ocurrencia &o) {
@@ -87,17 +81,22 @@ void Juego :: reponerFichas(const Ocurrencia &o){
         tuple<Nat, Nat, Letra> ficha = *it;
         Letra l = get<2>(ficha);
         _jugadores[_turnoDe]._fichasDelJugador[ord(l)]--;
-        Letra nueva_l = _repositorio.front();
-        _jugadores[_turnoDe]._fichasDelJugador[ord(nueva_l)]++;
-        _repositorio.pop_front();
         it ++;
+    }
+    darFichas(_turnoDe,o.size());
+}
+void Juego :: darFichas(const Nat &id, const Nat& cant){
+    for(Nat i = 0;i < cant;i++){
+        Letra nueva_l = _repositorio.front();
+        _jugadores[id]._fichasDelJugador[ord(nueva_l)]++;
+        _repositorio.pop_front();
     }
 }
 
-Nat Juego::calcularPuntos(queue<Repositorio> &palabras){
+Nat Juego::calcularPuntos(queue<list<Letra>> &palabras){
     Nat res = 0;
     while(!palabras.empty()){
-        Repositorio p = palabras.front();
+        list<Letra> p = palabras.front();
         auto it = p.begin();
         while(it != p.end()){
             Letra l = *it;
@@ -110,46 +109,38 @@ Nat Juego::calcularPuntos(queue<Repositorio> &palabras){
 }
 
 tuple<bool, bool> Juego::HorizontalOVertical(Ocurrencia o){
-    // declaro tupla pra meter datos
-    tuple<bool, bool> res = make_tuple(true, true);
+    bool horizontal = true, vertical = true;
 
-    if (o.size()==1) {
-        get<0>(res) = false;
-        get<1>(res) = true;
-    } else if (o.size()>1) {
+    if (o.size()>1) {
         auto it = o.begin();
         Nat fila0 = get<0>(*it);
         Nat col0 = get<1>(*it);
         it++;
-        while(it != o.end() && (get<0>(res) || get<1>(res))){
+        while(it != o.end() && (horizontal || vertical)){
             Nat fila1 = get<0>(*it);
             Nat col1 = get<1>(*it);
-            if(get<0>(res)){ //horizontal
-                get<0>(res) = fila1 == fila0;
-            }
-            if (get<1>(res)){ //vertical
-                get<1>(res) = col1 == col0;
-            }
+            if (horizontal) horizontal = fila1 == fila0;
+            if (vertical) vertical = col1 == col0;
             fila0 = fila1;
             col0 = col1;
             it++;
         }
     }
-    return res;
+    return make_tuple(horizontal,vertical);
 }
 
 Nat  Juego::calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus){
     Nat res = 0;
     while(not ocus.empty()){
         Ocurrencia p = ocus.front();
-        queue<Repositorio> palabras = palabrasFormadas(p);
+        queue<list<Letra>> palabras = palabrasFormadas(p);
         ocus.pop();
         res += calcularPuntos(palabras);
     }
     return res;
 }
 
-queue<Repositorio> Juego::palabrasFormadas(Ocurrencia &o){
+queue<list<Letra>> Juego::palabrasFormadas(Ocurrencia &o){
     if (o.size()>0){
         tuple<bool,bool> esHorizontalOVertical = HorizontalOVertical(o);
         bool horizontal = get<0>(esHorizontalOVertical);
@@ -158,22 +149,22 @@ queue<Repositorio> Juego::palabrasFormadas(Ocurrencia &o){
         if(vertical){
             sentido = false;
         }
-        queue<Repositorio> res = palabrasFormadasTransversales(o, sentido);
-        Repositorio palabraPrincipal = formarPalabraEnSentido(*o.begin(),sentido);
+        queue<list<Letra>> res = palabrasFormadasTransversales(o, sentido);
+        list<Letra> palabraPrincipal = formarPalabraEnSentido(*o.begin(),sentido);
         res.push(palabraPrincipal);
         return res;
     } else {
-        return queue<Repositorio>();
+        return queue<list<Letra>>();
     }
 }
 
 
-queue<Repositorio> Juego::palabrasFormadasTransversales(Ocurrencia &o, bool sentido) {
-    queue<Repositorio> res;
+queue<list<Letra>> Juego::palabrasFormadasTransversales(Ocurrencia &o, bool sentido) {
+    queue<list<Letra>> res;
     auto it = o.begin();
     while(it != o.end()){
         Ficha f= *it;
-        Repositorio palabra = formarPalabraEnSentido(f, not sentido);
+        list<Letra> palabra = formarPalabraEnSentido(f, not sentido);
 /*        if (sentido){
             palabra =  palabraFormadaVertical(f);
         } else {
@@ -187,7 +178,7 @@ queue<Repositorio> Juego::palabrasFormadasTransversales(Ocurrencia &o, bool sent
 }
 
 
-Repositorio Juego::formarPalabraEnSentido(Ficha f,bool sentido) const {
+list<Letra> Juego::formarPalabraEnSentido(Ficha f,bool sentido) const {
     list<Letra> res = {get<2>(f)};
 
     Nat fila = get<0>(f);
@@ -259,10 +250,10 @@ bool Juego::jugadaValida(const Ocurrencia &o) {
         if (res && 2 <= o.size() && DistanciaMayorAlongMax(o, sentido, largoMax)) res = false;
 
         if (res) {
-            Repositorio palabraPrincipal = FormarPalabraPrincipal(_tablero, o, sentido);
+            list<Letra> palabraPrincipal = FormarPalabraPrincipal(_tablero, o, sentido);
             res = varJ.palabraLegitima(palabraPrincipal);
             if(res){
-                list<Repositorio> palabras = PalabrasTransversales(_tablero,o,sentido);
+                list<list<Letra>> palabras = PalabrasTransversales(_tablero,o,sentido);
                 res = varJ.palabrasLegitimas(palabras);
             }
         }
@@ -301,7 +292,7 @@ void Juego::SumarAparicion(vector<tuple<Letra, Nat>> &apariciones, Letra l) {
         }
         i++;
     }
-    if( noEsta ) apariciones.push_back(make_tuple(l,1));
+    if(noEsta) apariciones.push_back(make_tuple(l,1));
 }
 
 bool Juego::ocurrenciaSinPosicionesRepetidas(const Ocurrencia &o) {
@@ -363,12 +354,12 @@ Nat Juego::distanciaEntreFichas(Ficha &min, Ficha &max, bool sentido) {
     return (sentido)? get<0>(max) - get<0>(min) : get<1>(max) - get<1>(min);
 }
 
-list<Repositorio> Juego::PalabrasTransversales(const Tablero &tab, const Ocurrencia &o, bool sentido){
-    list<Repositorio> res;
+list<list<Letra>> Juego::PalabrasTransversales(const Tablero &tab, const Ocurrencia &o, bool sentido){
+    list<list<Letra>> res;
     auto it = o.begin();
     while(it != o.end()){
         Ficha f= *it;
-        Repositorio palabra;
+        list<Letra> palabra;
 /*        if (sentido){
             palabra =  palabraTransversalVertical(tab, f);
         } else {
@@ -415,8 +406,8 @@ void Juego::ordenarVectorDeFichas(vector<Ficha> &vect_fichas, bool sentido) {
 }
 
 
-Repositorio Juego::FormarPalabraPrincipal( const Tablero& tab, const Ocurrencia& o ,bool sentido) {
-    Repositorio res;
+list<Letra> Juego::FormarPalabraPrincipal( const Tablero& tab, const Ocurrencia& o ,bool sentido) {
+    list<Letra> res;
     // pasa a vector la ocurrencia y la ordena,
     vector<Ficha> fichas = ocurrenciaAVector(o);
     ordenarVectorDeFichas(fichas, sentido);
@@ -457,7 +448,7 @@ Repositorio Juego::FormarPalabraPrincipal( const Tablero& tab, const Ocurrencia&
                     res.push_back(LetraNueva);
                     i++;
                 }else{
-                    res = Repositorio();
+                    res = list<Letra>();
                     esContigua = false;
                 }
             }
