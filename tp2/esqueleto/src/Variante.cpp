@@ -44,6 +44,6 @@ bool Variante::palabrasLegitimas(const list<list<Letra>> &palabras) const {
     }
     return res;
 }
-Nat Variante::lmax(){
+Nat Variante::lmax() const {
     return _palabrasPermitidas.lmax();
 }

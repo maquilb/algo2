@@ -47,7 +47,7 @@ public:
     /**
      * Indica la palabra mas larga del diccionario
      */
-    Nat lmax();
+    Nat lmax() const;
 
 private:
 

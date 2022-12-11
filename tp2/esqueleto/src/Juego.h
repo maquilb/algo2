@@ -15,7 +15,7 @@ public:
      *
      * Complejidad: O(tamanoTab**2 + ALPHABET_SIZE*cantJugadores + cantFichas*cantJugadores)
      */
-    Juego(Nat k, const Variante& v, Repositorio& r);
+    Juego(Nat k, const Variante& v,const Repositorio& r);
 
     /**
      * Ubica una Ocurrencia o en el juego
@@ -132,8 +132,9 @@ private:
         queue<Ocurrencia> _ocurrenciasDelJugador;
         Jugador() : _fichasDelJugador(TAMANIO_ALFABETO), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
     };
-    Variante _variante;
-    Repositorio _repositorio;
+    const Variante& _variante;
+    const Repositorio& _repositorio;
+    Repositorio::const_iterator _siguiente_letra;
     Tablero _tablero;
     vector<Jugador> _jugadores;
     Nat _cantidadDeTurnos;

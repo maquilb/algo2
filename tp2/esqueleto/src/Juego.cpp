@@ -1,7 +1,7 @@
 
 #include "Juego.h"
 
-Juego::Juego(Nat k, const Variante &v, Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(_variante.tamanoTablero())), _jugadores(k, Jugador()), _cantidadDeTurnos(0), _turnoDe(0) {
+Juego::Juego(Nat k, const Variante &v, const Repositorio &r): _variante(v), _repositorio(r), _tablero(Tablero(_variante.tamanoTablero())), _jugadores(k, Jugador()), _cantidadDeTurnos(0), _turnoDe(0), _siguiente_letra(r.begin()) {
     for (int i = 0; i < _jugadores.size(); i++) darFichas(i,v.fichas());
 }
 
@@ -87,9 +87,9 @@ void Juego :: reponerFichas(const Ocurrencia &o){
 }
 void Juego :: darFichas(const Nat &id, const Nat& cant){
     for(Nat i = 0;i < cant;i++){
-        Letra nueva_l = _repositorio.front();
+        Letra nueva_l = *_siguiente_letra;
         _jugadores[id]._fichasDelJugador[ord(nueva_l)]++;
-        _repositorio.pop_front();
+        _siguiente_letra++;
     }
 }
 
@@ -141,7 +141,7 @@ Nat  Juego::calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus){
 }
 
 queue<list<Letra>> Juego::palabrasFormadas(Ocurrencia &o){
-    if (o.size()>0){
+    if (not o.empty()){
         tuple<bool,bool> esHorizontalOVertical = HorizontalOVertical(o);
         bool horizontal = get<0>(esHorizontalOVertical);
         bool vertical = get<1>(esHorizontalOVertical);
@@ -154,7 +154,7 @@ queue<list<Letra>> Juego::palabrasFormadas(Ocurrencia &o){
         res.push(palabraPrincipal);
         return res;
     } else {
-        return queue<list<Letra>>();
+        return {};
     }
 }
 
@@ -165,12 +165,6 @@ queue<list<Letra>> Juego::palabrasFormadasTransversales(Ocurrencia &o, bool sent
     while(it != o.end()){
         Ficha f= *it;
         list<Letra> palabra = formarPalabraEnSentido(f, not sentido);
-/*        if (sentido){
-            palabra =  palabraFormadaVertical(f);
-        } else {
-            palabra =  palabraFormadaHorizontal(f);
-        }*/
-
         res.push(palabra);
         it++;
     }
@@ -195,16 +189,16 @@ list<Letra> Juego::formarPalabraEnSentido(Ficha f,bool sentido) const {
     (sentido)? ant_col-=1: ant_fil-=1;
     (sentido)? sig_col+=1: sig_fil+=1;
 
-    while( _tablero.estaOcupada(ant_fil,ant_col) &&  (not jugada ||
-                                                      (jugada && turno_jug >= _tablero.turnoApoyado(ant_fil,ant_col))) ){
+    while( _tablero.estaOcupada(ant_fil,ant_col) &&
+            (not jugada || (jugada && turno_jug >= _tablero.turnoApoyado(ant_fil,ant_col))) ){
 
         Letra letraAdelante = _tablero.letraEnPos(ant_fil, ant_col);
         res.push_front(letraAdelante);
         (sentido)? ant_col-=1 : ant_fil-=1;
     }
 
-    while( _tablero.estaOcupada(sig_fil,sig_col) && (not jugada ||
-                                                     (jugada && turno_jug >= _tablero.turnoApoyado(sig_fil, sig_col))) ){
+    while( _tablero.estaOcupada(sig_fil,sig_col) &&
+            (not jugada || (jugada && turno_jug >= _tablero.turnoApoyado(sig_fil, sig_col))) ){
 
         Letra letraSiguiente = _tablero.letraEnPos(sig_fil, sig_col);
         res.push_back(letraSiguiente);

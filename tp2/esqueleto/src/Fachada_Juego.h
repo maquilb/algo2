@@ -13,7 +13,7 @@ public:
      *
      * Complejidad: O(tamanoTab**2 + ALPHABET_SIZE*cantJugadores + cantFichas*cantJugadores)
      */
-    Fachada_Juego(Nat k, const Fachada_Variante& v, Repositorio& r);
+    Fachada_Juego(Nat k, const Fachada_Variante& v, const Repositorio& r);
 
     /**
      * Ubica una Ocurrencia o en el juego
@@ -76,7 +76,7 @@ public:
 
 private:
     Juego _juego;
-    Fachada_Variante _fvariante;
+    const Fachada_Variante& _fvariante;
 };
 
 #endif // FACHADA_JUEGO_H
