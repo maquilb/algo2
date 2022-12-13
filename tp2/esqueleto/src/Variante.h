@@ -12,12 +12,12 @@ public:
     /**
      * Construye una Variante a partir de los parametros de las variantes
      */
-    Variante (
+    Variante(
             Nat tamanoTab,
             Nat cantFichas,
-            const map<Letra, Nat>& puntajes,
-            const set<list<Letra>>& palabrasLegitimas
-    ) ;
+            const map<Letra, Nat> &puntajes,
+            const set<list<Letra>> &palabrasLegitimas
+    );
 
     /**
      * Retorna el tamano del tablero de la variante
@@ -56,7 +56,6 @@ private:
     vector<Nat> _valorLetras;
     conjunto_Trie _palabrasPermitidas;
 };
-
 
 
 #endif //VARIANTE_H

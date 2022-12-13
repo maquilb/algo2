@@ -1,15 +1,24 @@
 #include "Servidor.h"
 
-Servidor::Servidor(Nat cantJugadores, const Variante &variante, Repositorio &r) : _cantJugadoresConectados(0), _cantJugadoresEsperados(cantJugadores), _notificacionesPersonales(cantJugadores), _cantVistosNotificacionesParaTodos(cantJugadores), _notificacionesParaTodos(), _cantDeNotificaciones(0), _juego(cantJugadores, variante, r) {}
+Servidor::Servidor(Nat cantJugadores, const Variante &variante, Repositorio &r) : _cantJugadoresConectados(0),
+                                                                                  _cantJugadoresEsperados(
+                                                                                          cantJugadores),
+                                                                                  _notificacionesPersonales(
+                                                                                          cantJugadores),
+                                                                                  _cantVistosNotificacionesParaTodos(
+                                                                                          cantJugadores),
+                                                                                  _notificacionesParaTodos(),
+                                                                                  _cantDeNotificaciones(0),
+                                                                                  _juego(cantJugadores, variante, r) {}
 
 void Servidor::conectarCliente() {
     enviarNotiPers(_cantJugadoresConectados, Notificacion::nuevaIdCliente(_cantJugadoresConectados));
-    _cantJugadoresConectados ++;
-    if (_cantJugadoresConectados == _cantJugadoresEsperados){
+    _cantJugadoresConectados++;
+    if (_cantJugadoresConectados == _cantJugadoresEsperados) {
         Nat tamTablero = _juego.variante().tamanoTablero();
         enviarNotiTodos(Notificacion::nuevaEmpezar(tamTablero));
         enviarNotiTodos(Notificacion::nuevaTurnoDe(0));
-        for(Nat i=0; i<_cantJugadoresEsperados; i++){
+        for (Nat i = 0; i < _cantJugadoresEsperados; i++) {
             enviarNotiPers(i, Notificacion::nuevaReponer(fichasIniciales(i)));
         }
     }
@@ -19,7 +28,7 @@ void Servidor::recibirMensaje(IdCliente id, const Ocurrencia &o) {
 
     bool esValida = ((empezoJuego()) && (id == _juego.turno()));
 
-    if(esValida) {
+    if (esValida) {
         bool jugValida = _juego.jugadaValida(o);
 
         if (jugValida) {
@@ -54,7 +63,7 @@ std::list<Notificacion> Servidor::notificaciones(IdCliente id) {
     //Puede ser que este paso no sea necesario, porque vacio la cola cuando llamo a la funcion colaAVector
     _notificacionesPersonales[id] = notisPers;
     Nat cant = _notificacionesParaTodos.size();
-    _cantVistosNotificacionesParaTodos[id] +=cant;
+    _cantVistosNotificacionesParaTodos[id] += cant;
     return res;
 }
 
@@ -87,14 +96,14 @@ std::list<Notificacion> Servidor::ordenarNotificaciones(IdCliente id) {
     notisPers = colaAVector(_notificacionesPersonales[id]);
     Nat prim = _cantVistosNotificacionesParaTodos[id];
     list<Notificacion> res;
-    if (prim < _notificacionesParaTodos.size()){
+    if (prim < _notificacionesParaTodos.size()) {
         vector<tuple<Notificacion, Nat>> notisTodos;
-        for(Nat i = prim; i<_notificacionesParaTodos.size(); i++){
+        for (Nat i = prim; i < _notificacionesParaTodos.size(); i++) {
             notisTodos.push_back(_notificacionesParaTodos[i]);
         }
         Merge(res, notisPers, notisTodos);
     } else {
-        for (Nat i = 0; i<notisPers.size(); i++){
+        for (Nat i = 0; i < notisPers.size(); i++) {
             res.push_back(get<0>(notisPers[i]));
         }
     }
@@ -103,9 +112,9 @@ std::list<Notificacion> Servidor::ordenarNotificaciones(IdCliente id) {
 
 multiset<Letra> Servidor::fichasIniciales(Nat id) {
     multiset<Letra> res;
-    for (int i=0; i < TAMANIO_ALFABETO; i++) {
+    for (int i = 0; i < TAMANIO_ALFABETO; i++) {
         Nat k = _juego.cantFicha(id, inversaDeOrd(i));
-        for (int j=0; j < k; j++) {
+        for (int j = 0; j < k; j++) {
             res.insert(inversaDeOrd(i));
         }
     }
@@ -114,10 +123,10 @@ multiset<Letra> Servidor::fichasIniciales(Nat id) {
 
 multiset<Letra> Servidor::fichasRepuestas(Nat id, vector<Nat> &fichasAnteriores, const vector<Nat> &fichasPostJugada) {
     multiset<Letra> res;
-    for(Nat i=0; i < fichasPostJugada.size() - 1 ;i++ ){
-        if(fichasAnteriores[i] < fichasPostJugada[i]){
-            Nat cant =  fichasPostJugada[i] - fichasAnteriores[i];
-            while(cant > 0){
+    for (Nat i = 0; i < fichasPostJugada.size() - 1; i++) {
+        if (fichasAnteriores[i] < fichasPostJugada[i]) {
+            Nat cant = fichasPostJugada[i] - fichasAnteriores[i];
+            while (cant > 0) {
                 res.insert(inversaDeOrd(i));
                 cant--;
             }
@@ -128,7 +137,7 @@ multiset<Letra> Servidor::fichasRepuestas(Nat id, vector<Nat> &fichasAnteriores,
 
 vector<tuple<Notificacion, Nat>> Servidor::colaAVector(queue<tuple<Notificacion, Nat>> &notisPers) {
     vector<tuple<Notificacion, Nat>> res;
-    while (!notisPers.empty()){
+    while (!notisPers.empty()) {
         res.push_back(notisPers.front());
         notisPers.pop();
     }
@@ -140,8 +149,8 @@ void Servidor::Merge(list<Notificacion> &res, vector<tuple<Notificacion, Nat>> &
     Nat iP = 0;
     Nat iT = 0;
     Nat tam = notisPers.size() + notisTodos.size();
-    for(Nat i=0; i<tam; i++){
-        if (iP<notisPers.size() && (iT>= notisTodos.size() || get<1>(notisPers[iP])<get<1>(notisTodos[iT]))){
+    for (Nat i = 0; i < tam; i++) {
+        if (iP < notisPers.size() && (iT >= notisTodos.size() || get<1>(notisPers[iP]) < get<1>(notisTodos[iT]))) {
             res.push_back(get<0>(notisPers[iP]));
             iP++;
         } else {

@@ -14,8 +14,8 @@ public:
     Fachada_Variante(
             Nat tamanoTab,
             Nat cantFichas,
-            const map<Letra, Nat>& puntajes,
-            const set<vector<Letra>>& palabrasLegitimas
+            const map<Letra, Nat> &puntajes,
+            const set<vector<Letra>> &palabrasLegitimas
     );
 
     /**
@@ -36,13 +36,16 @@ public:
 /**
      * Indica si una palabra es legitima o no
      */
-    bool palabraLegitima(const Palabra& palabra) const;
+    bool palabraLegitima(const Palabra &palabra) const;
 
-    const Variante& variante() const;
+    const Variante &variante() const;
+
 private:
     Variante _variante;
-    set<list<Letra>> setvectorToList(const set<Palabra>& palabra)const;
-    list<Letra> vectorToList(const Palabra& pal)const;
+
+    set<list<Letra>> setvectorToList(const set<Palabra> &palabra) const;
+
+    list<Letra> vectorToList(const Palabra &pal) const;
 };
 
 #endif //FACHADA_VARIANTE_H

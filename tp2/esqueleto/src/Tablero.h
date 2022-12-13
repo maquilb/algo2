@@ -6,7 +6,7 @@
 #include <type_traits>
 #include "Letra.h"
 
-class Tablero{
+class Tablero {
 public:
 
     Tablero(Nat n);
@@ -32,8 +32,11 @@ public:
     Nat turnoApoyado(Nat fila, Nat columna);
 
     bool enTablero(Nat fila, Nat columna) const;
+
     bool estaOcupada(Nat fila, Nat columna) const;
+
     Nat turnoApoyado(Nat fila, Nat columna) const;
+
     Letra letraEnPos(Nat fila, Nat columna) const;
 
 private:

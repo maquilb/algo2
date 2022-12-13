@@ -8,9 +8,9 @@ conjunto_Trie::~conjunto_Trie() {
     eliminar(_raiz);
 }
 
-void conjunto_Trie::eliminar(conjunto_Trie::Nodo* n) {
-    if (n != nullptr){
-        for(int i = 0; i < TAMANIO_ALFABETO; i++){
+void conjunto_Trie::eliminar(conjunto_Trie::Nodo *n) {
+    if (n != nullptr) {
+        for (int i = 0; i < TAMANIO_ALFABETO; i++) {
             eliminar(n->_siguientes[i]);
         }
         delete n;
@@ -19,14 +19,14 @@ void conjunto_Trie::eliminar(conjunto_Trie::Nodo* n) {
 
 void conjunto_Trie::agregar(list<Letra> &palabra) {
     Nat longitud = palabra.size();
-    if (_longitudmax < longitud){
+    if (_longitudmax < longitud) {
         _longitudmax = longitud;
     }
-    Nodo* actual = _raiz;
+    Nodo *actual = _raiz;
     auto it = palabra.begin();
-    while(it != palabra.end()){
+    while (it != palabra.end()) {
         Nat numLetra = ord(*it);
-        if (actual->_siguientes[numLetra] == nullptr){
+        if (actual->_siguientes[numLetra] == nullptr) {
             actual->_siguientes[numLetra] = new Nodo;
         }
         actual = actual->_siguientes[numLetra];
@@ -35,26 +35,26 @@ void conjunto_Trie::agregar(list<Letra> &palabra) {
     actual->_palabraDefinida = true;
 }
 
-bool conjunto_Trie::esVacio() const{
+bool conjunto_Trie::esVacio() const {
     bool res = _raiz == nullptr;
-    int i =0;
-    while (res && i<TAMANIO_ALFABETO){
+    int i = 0;
+    while (res && i < TAMANIO_ALFABETO) {
         res = _raiz->_siguientes[i] == nullptr;
         i++;
     }
     return res;
 }
 
-bool conjunto_Trie::pertenece(const list<Letra>& palabra) const {
+bool conjunto_Trie::pertenece(const list<Letra> &palabra) const {
     bool res = true;
-    Nodo* actual = _raiz;
-    if (palabra.size() > _longitudmax){
+    Nodo *actual = _raiz;
+    if (palabra.size() > _longitudmax) {
         res = false;
     } else {
         auto it = palabra.begin();
-        while(it != palabra.end()){
+        while (it != palabra.end()) {
             Nat numLetra = ord(*it);
-            if (actual->_siguientes[numLetra] == nullptr){
+            if (actual->_siguientes[numLetra] == nullptr) {
                 return false;
             }
             actual = actual->_siguientes[numLetra];
@@ -71,7 +71,7 @@ Nat conjunto_Trie::lmax() const {
 
 void conjunto_Trie::agregarPalabras(set<list<Letra>> palabras) {
     auto it = palabras.begin();
-    while(it != palabras.end()){
+    while (it != palabras.end()) {
         agregar(const_cast<list<Letra> &>(*it));
         it++;
     }
@@ -83,8 +83,8 @@ conjunto_Trie::conjunto_Trie(const conjunto_Trie &aCopiar) {
 
 conjunto_Trie &conjunto_Trie::operator=(const conjunto_Trie &d) {
     this->_longitudmax = d._longitudmax;
-    Nodo* n = nullptr;
-    if(not d.esVacio()){
+    Nodo *n = nullptr;
+    if (not d.esVacio()) {
         n = copiar(d._raiz);
     }
     this->_raiz = n;

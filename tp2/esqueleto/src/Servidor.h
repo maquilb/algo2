@@ -17,8 +17,8 @@ public:
      */
     Servidor(
             Nat cantJugadores,
-            const Variante& variante,
-            Repositorio& r
+            const Variante &variante,
+            Repositorio &r
     );
 
     /**
@@ -35,7 +35,7 @@ public:
      * N ni de K. Puede depender de |Σ|, F, Lmáx y del número de fichas que el jugador pretenda ubicar al
      * enviar este mensaje.
      */
-    void recibirMensaje(IdCliente id, const Ocurrencia& o);
+    void recibirMensaje(IdCliente id, const Ocurrencia &o);
 
     /**
      * Retorna la cantidad de jugadores necesarios para poder empezar el juego
@@ -51,12 +51,13 @@ public:
      */
 
     Nat jugadoresConectados();
+
     /**
     * Retorna el juego del servidor
     *
     * Complejidad: O(1)
     */
-    const Juego& juegoDelServidor();
+    const Juego &juegoDelServidor();
 
     /**
      * Indica si el juego de un servido empezó
@@ -96,7 +97,8 @@ private:
 
     vector<tuple<Notificacion, Nat>> colaAVector(queue<tuple<Notificacion, Nat>> &queue);
 
-    void Merge(list<Notificacion> &res, vector<tuple<Notificacion, Nat>> &notisPers, vector<tuple<Notificacion, Nat>> &notisTodos);
+    void Merge(list<Notificacion> &res, vector<tuple<Notificacion, Nat>> &notisPers,
+               vector<tuple<Notificacion, Nat>> &notisTodos);
 };
 
 #endif // SERVIDOR_H

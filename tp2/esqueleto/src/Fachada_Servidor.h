@@ -16,9 +16,9 @@ public:
      * Complejidad: O(tamanoTab**2 + TAMANIO_ALFABETO*cantJugadores + cantFichas*cantJugadores)
      */
     Fachada_Servidor(
-        Nat cantJugadores,
-        const Fachada_Variante& variante,
-        Repositorio& r
+            Nat cantJugadores,
+            const Fachada_Variante &variante,
+            Repositorio &r
     );
 
     /**
@@ -35,7 +35,7 @@ public:
      * N ni de K. Puede depender de |Σ|, F, Lmáx y del número de fichas que el jugador pretenda ubicar al
      * enviar este mensaje.
      */
-    void recibirMensaje(IdCliente id, const Ocurrencia& o);
+    void recibirMensaje(IdCliente id, const Ocurrencia &o);
 
     /**
      * Retorna la cantidad de jugadores necesarios para poder empezar el juego

@@ -1,10 +1,10 @@
 #include "Tablero.h"
 
-Tablero::Tablero(Nat n): _tamanio(n), _casillero(n, vector<tuple<bool,Letra, Nat>>(n)) {
-    tuple<bool,Letra, Nat> p = make_tuple(false, inversaDeOrd(1), 0);
+Tablero::Tablero(Nat n) : _tamanio(n), _casillero(n, vector<tuple<bool, Letra, Nat>>(n)) {
+    tuple<bool, Letra, Nat> p = make_tuple(false, inversaDeOrd(1), 0);
 
-    for (int i = 0; i < n ; ++i) {
-        for (int j = 0; j < n ; ++j) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             _casillero[i][j] = p;
         }
     }
@@ -13,7 +13,7 @@ Tablero::Tablero(Nat n): _tamanio(n), _casillero(n, vector<tuple<bool,Letra, Nat
 void Tablero::ponerLetra(Nat fila, Nat columna, Letra l, Nat turno) {
     get<0>(_casillero[fila][columna]) = true;
     get<1>(_casillero[fila][columna]) = l;
-    get<2>(_casillero[fila][columna])= turno;
+    get<2>(_casillero[fila][columna]) = turno;
 }
 
 Nat Tablero::tamanio() {
@@ -29,11 +29,11 @@ Letra Tablero::letraEnPos(Nat fila, Nat columna) {
 }
 
 bool Tablero::enTablero(Nat fila, Nat columna) {
-    return ((fila < _tamanio ) && (columna < _tamanio));
+    return ((fila < _tamanio) && (columna < _tamanio));
 }
 
 bool Tablero::estaLibre(Nat fila, Nat columna) {
-    return enTablero(fila, columna) && not (get<0>(_casillero[fila][columna]));
+    return enTablero(fila, columna) && not(get<0>(_casillero[fila][columna]));
 }
 
 bool Tablero::estaOcupada(Nat fila, Nat columna) {
@@ -46,7 +46,7 @@ void Tablero::ponerLetras(Ocurrencia ocur, Nat turno) {
     Nat colDeFicha;
     Nat turnoDeJugada = turno;
 
-    for (auto it = ocur.begin() ; it != ocur.end(); it++){
+    for (auto it = ocur.begin(); it != ocur.end(); it++) {
         ficha = get<2>(*it);
         filaDeFicha = get<0>(*it);
         colDeFicha = get<1>(*it);
@@ -57,8 +57,8 @@ void Tablero::ponerLetras(Ocurrencia ocur, Nat turno) {
 
 bool Tablero::sonCeldasLibres(Ocurrencia o) {
     bool res = true;
-    for (auto it = o.begin() ; it != o.end(); it++){
-        if (estaOcupada(get<0>(*it), get<1>(*it))){
+    for (auto it = o.begin(); it != o.end(); it++) {
+        if (estaOcupada(get<0>(*it), get<1>(*it))) {
             res = false;
         }
     }
@@ -71,11 +71,11 @@ Nat Tablero::turnoApoyado(Nat fila, Nat columna) {
 
 
 bool Tablero::enTablero(Nat fila, Nat columna) const {
-    return ((fila < _tamanio ) && (columna < _tamanio));
+    return ((fila < _tamanio) && (columna < _tamanio));
 }
 
 bool Tablero::estaOcupada(Nat fila, Nat columna) const {
-    bool res =  enTablero(fila, columna) && (get<0>(_casillero[fila][columna]));
+    bool res = enTablero(fila, columna) && (get<0>(_casillero[fila][columna]));
     return res;
 }
 

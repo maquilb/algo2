@@ -7,7 +7,6 @@
 #include "Tablero.h"
 
 
-
 class Juego {
 public:
     /**
@@ -15,7 +14,7 @@ public:
      *
      * Complejidad: O(tamanoTab**2 + ALPHABET_SIZE*cantJugadores + cantFichas*cantJugadores)
      */
-    Juego(Nat k, const Variante& v,const Repositorio& r);
+    Juego(Nat k, const Variante &v, const Repositorio &r);
 
     /**
      * Ubica una Ocurrencia o en el juego
@@ -23,7 +22,7 @@ public:
      * Complejidad: O(m)
      *   donde m es el numero de fichas que se ubican
      */
-    void ubicar(const Ocurrencia& o);
+    void ubicar(const Ocurrencia &o);
 
     /**
      * Retorna el id del cliente al cual le toca jugar
@@ -37,7 +36,7 @@ public:
      *
      * Complejidad: O(1)
      */
-    const Variante& variante();
+    const Variante &variante();
 
     /**
      * Retorna la cantidad de jugadores en el juego
@@ -51,14 +50,14 @@ public:
      *
      * Complejidad: O(1)
      */
-    const Repositorio& repositorio();
+    const Repositorio &repositorio();
 
     /**
      * Retorna el tablero del juego
      *
      * Complejidad: O(1)
      */
-    const Tablero& tablero();
+    const Tablero &tablero();
 
     /**
      * Dada una posición del tablero, devuelve si está ocupada, la letra que lo ocupa y el turno en el que fue ubicada la ficha (si está vacía, devuelve la primera letra del alfabeto y el turno 0)
@@ -93,7 +92,7 @@ public:
      *
      * Complejidad: O(Lmax ** 2)
      */
-    bool jugadaValida(const Ocurrencia& o);
+    bool jugadaValida(const Ocurrencia &o);
 
     /**
      * Retorna true sii la coordenada se encuentra ocupada.
@@ -130,10 +129,12 @@ private:
         vector<Nat> _fichasDelJugador;
         Nat _puntajeDelJugador;
         queue<Ocurrencia> _ocurrenciasDelJugador;
+
         Jugador() : _fichasDelJugador(TAMANIO_ALFABETO), _puntajeDelJugador(0), _ocurrenciasDelJugador() {}
     };
-    const Variante& _variante;
-    const Repositorio& _repositorio;
+
+    const Variante &_variante;
+    const Repositorio &_repositorio;
     Repositorio::const_iterator _siguiente_letra;
     Tablero _tablero;
     vector<Jugador> _jugadores;
@@ -160,7 +161,7 @@ private:
 
     queue<list<Letra>> palabrasFormadas(Ocurrencia &o);
 
-    Nat  calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus);
+    Nat calcularPuntosPalabrasJugadas(queue<Ocurrencia> &ocus);
 
     list<list<Letra>> PalabrasTransversales(const Tablero &tablero, const Ocurrencia &set, bool sentido);
 
